@@ -10,3 +10,14 @@ run = ["sh", "-c", "node index.js"]
 [[ports]]
 localPort = 3000
 externalPort = 80
+
+[workflows]
+runButton = "Servidor Web"
+
+[[workflows.workflow]]
+name = "Servidor Web"
+author = 39640504
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx http-server -p 3000"
