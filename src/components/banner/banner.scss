@@ -1,0 +1,186 @@
+// Global
+@import '../../functions';
+@import '../../variables';
+// Local
+@import 'variables';
+
+// OLD
+
+.bth-banner {
+  border-radius: $border-radius-small;
+  padding: 8px;
+  a {
+    font-weight: 600;
+  }
+  .bth-banner-head {
+    display: flex;
+    font-size: 14px;
+    position: relative;
+  }
+  @each $name, $value in $banner-states {
+    &.bth-banner-#{$name} {
+      background-color: map-get($value, 'background');
+      border: 1px solid map-get($value, 'border-color');
+      color: map-get($value, 'color');
+      .bth-banner-head {
+        &:before {
+          content: map-get($value, 'icon-name');
+          display: inline-block;
+          font-family: $base-icon;
+          font-feature-settings: 'liga' 1;
+          font-size: 20px;
+          font-style: normal;
+          height: 20px;
+          line-height: 1;
+          margin-right: 5px;
+          overflow: hidden;
+          text-rendering: optimizeLegibility;
+          text-transform: none;
+          white-space: nowrap;
+          width: 20px;
+        }
+      }
+      a {
+        color: map-get($value, 'link-color');
+      }
+    }
+  }
+  .bth-banner-body {
+    i.material-icons {
+      vertical-align: sub;
+    }
+  }
+  &.bth-banner-sm {
+    flex-direction: column;
+    .bth-banner-head {
+      a {
+        color: map-get($banner, 'close-color');
+        font-size: 24px;
+        font-weight: 100;
+        line-height: 18px;
+        position: absolute;
+        right: 0;
+        text-decoration: none;
+        top: 0;
+        &:hover {
+          color: map-get($banner, 'close-color-hover');
+        }
+      }
+    }
+    .bth-banner-body {
+      color: map-get($banner, 'color');
+      margin-left: 25px;
+      i.material-icons {
+        vertical-align: sub;
+      }
+    }
+    .bth-banner-bottom {
+      margin-top: 20px;
+      text-align: right;
+    }
+  }
+}
+
+// NEW
+
+.bf-banner {
+  display: flex;
+  flex-direction: row;
+  grid-area: banner;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 42px 0 16px;
+  position: relative;
+  transition: max-height 300ms ease-in-out, padding 300ms ease-in-out;
+  vertical-align: middle;
+  width: 100%;
+  z-index: 1060;
+  height: 40px;
+  max-height: 40px;
+  &__content {
+    line-height: 1.5;
+    margin: 9px 16px;
+    max-width:95%;
+    > a {
+      color: palette('black');
+      text-decoration: underline;
+      vertical-align: top;
+    }
+    >span{  
+      overflow: hidden;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+      display:inline-block;   
+      max-width: 100%; 
+    }
+
+    >span~a{
+      max-width: 85%; 
+    }
+  }
+  &__icon {
+    line-height: 1.5;
+    margin: 9px 0px;
+  }
+  > .close {
+    color: $gray-dark-30;
+    height: 100%;
+    margin-left: 8px;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    text-shadow: none;
+    top: 0;
+    width: 36px;
+    &:hover,
+    &:focus {
+      background-color: mix($black, transparent, 5%)
+    }
+  }
+  &--warning {
+    background-color: palette('yellow', 'light-10');
+  }
+  &--info {
+    background-color: palette('aqua', 'light-20');
+  }
+  &--show {
+    max-height: 500px;
+    padding: 10px 42px 10px 16px;
+  }  
+}
+
+@media (max-width: 991px) {
+  .bf-banner{
+    height: 75px;
+    max-height: 75px;
+    $font-size: 14px;
+    $line-height: 1.1;
+    $lines-to-show: 2;
+    .bf-banner__content {
+        margin: 9px 16px;
+        max-width: 95%;
+  
+        >span{  
+          display: block; 
+          display: -webkit-box;
+          max-width: 100%;
+          min-height: ($font-size*$line-height*$lines-to-show)/2; 
+          margin: 0 auto;
+          font-size: $font-size;
+          line-height: $line-height;
+          -webkit-line-clamp: $lines-to-show; 
+          /* autoprefixer: off */ 
+          -webkit-box-orient: vertical;  
+          /* autoprefixer: on */
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: unset;          
+        }
+  
+        >a{
+          vertical-align: top;
+        }
+    } 
+
+  }
+}

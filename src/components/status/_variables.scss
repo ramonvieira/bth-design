@@ -1,0 +1,13 @@
+// Variáveis
+
+// As variáveis devem seguir o seguinte padrão `$componente-estado-propriedade-tamanho`.
+// Ex.: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+$status: $gray;
+$status-default: $gray-light-20;
+$status-default-text: $gray-dark-20;
+$status-primary: $blue;
+$status-success: $green;
+$status-danger: $red;
+$status-warning: $yellow;
+$status-info: $aqua;

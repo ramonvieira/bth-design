@@ -1,0 +1,79 @@
+@import '../../config';
+
+$root: '.bth-navigation';
+$rootFixed: $root+'--fixed';
+
+#{$root} { 
+  >.container {
+    background-color: $white;
+    display: flex;
+    height: 40px;
+    .breadcrumb {
+      align-self: center;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+    > button:first-child {
+      padding-left: 0;
+      padding-right: 0;
+      i {
+        font-size: 24px;
+      }
+    }
+    h1 {
+      display: inline-block;
+      font-size: 20px;
+      line-height: 37px;
+      margin: 0;
+      overflow: hidden;
+      padding-left: 8px;
+      padding-right: 8px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+#{$rootFixed} {
+  height: 40px;
+  width: 100%;
+  >.container {
+    position: fixed;
+    top: 85px;
+    width: 100%;
+    z-index: 1067;
+  }
+}
+
+.bth-context + .bth-navigation {
+  margin-bottom: 12px;
+  > .container {
+    border-top: 1px solid $gray-light-10;
+  }
+}
+
+// Barra de contexto escondida ou inexistente
+
+.megamenu-container + .bth-navigation,
+.bth-context.ng-hide + .bth-navigation {
+  > .container {
+    top: 45px;
+  }
+}
+
+.bf-header{ 
+  .bth-navigation {
+    margin: 0px 16px;
+    >.container {
+      padding: 0;
+      h1{
+        padding: 0;
+      }
+
+      > button:first-child + h1{
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+    }
+  }
+}

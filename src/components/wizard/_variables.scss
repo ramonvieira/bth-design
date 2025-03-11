@@ -1,0 +1,14 @@
+// Variáveis
+
+// As variáveis devem seguir o seguinte padrão `$componente-estado-propriedade-tamanho`.
+// Ex.: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+$wizard-colors: (
+  palette('red', 'light-10'),
+  palette('blue', 'light-10'),
+  palette('green', 'light-10'),
+  palette('orange', 'light-10'),
+  palette('purple', 'light-10'),
+  palette('yellow', 'light-10'),
+  palette('aqua', 'light-10')
+);

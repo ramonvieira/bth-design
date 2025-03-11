@@ -1,0 +1,45 @@
+// Global
+@import '../../variables';
+
+.bth-range-slider.ui-widget.ui-widget-content {
+  border: none;
+  height: 2px;
+  margin: 8px 0 8px 9px;
+  padding: 0;
+  width: calc(100% - 12px);
+
+  &:before{
+    border-top: 2px solid $gray-light-10;
+    content: '';
+    position: absolute;
+    width: 100%;
+  }
+  div {
+    background: $blue;
+    box-shadow: none;
+    height: 2px;
+  }
+  span {
+    background: $blue;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    height: 12px;
+    margin-top: -1px;
+    outline: none;
+    transition: transform .1s ease-in-out;
+    width: 12px;
+
+    &.ui-state-active{
+      transform: scale(1.33);
+    }
+  }
+
+  &.ui-slider-disabled {
+    div,
+    span {
+      background: palette('blue', 'light-30');
+      cursor: default;
+    }
+  }
+}

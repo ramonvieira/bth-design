@@ -1,0 +1,20 @@
+@import '../../config';
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 6px;
+  width: 6px;
+  &-track {
+    background: $gray-light-30;
+  }
+  &-corner {
+    background: lighten(palette('blGray', 'light-40'), 3%);
+  }
+  &-thumb {
+    background-color: $gray;
+    border-radius: 1px;
+    &:hover {
+      background-color: mix($white, transparent, 30%);
+    }
+  }
+}

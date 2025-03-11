@@ -1,0 +1,44 @@
+// Global
+@import '../../config';
+/* bfMain */
+
+.bf-main {
+  display: grid;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  padding: 0 !important;
+  background: $white;
+  grid-template: 'banner banner' 'menu-horizontal menu-horizontal' max-content 'menu container' 1fr / minmax(0px, max-content) 1fr;
+  .container-fluid {
+    padding: 0 16px;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+/* bfHeader */
+
+.bf-header {
+  grid-area: header;
+  position: relative;
+  z-index: 1050;
+}
+
+/* bfContainer */
+
+.bf-container {
+  display: grid;
+  grid-area: container;
+  grid-template: 'header' max-content 'content' 1fr / 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* bfContent */
+
+.bf-content {
+  grid-area: content;
+  overflow-y: auto;
+  padding: 8px 0;
+}

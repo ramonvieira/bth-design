@@ -1,0 +1,83 @@
+// Local
+@import 'variables';
+
+/* Material Icons */
+// https://github.com/google/material-design-icons
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('#{$icons-name}.eot'); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url('#{$icons-name}.woff2') format('woff2'),
+    url('#{$icons-name}.woff') format('woff'),
+    url('#{$icons-name}.ttf') format('truetype');
+}
+
+.material-icons {
+  direction: ltr;
+  display: inline-block;
+  font-family: 'Material Icons';
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+  font-size: 1.12em;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  vertical-align: sub;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.caret {
+  border: 0;
+  padding-left: 8px;
+  position: relative;
+  width: 8px;
+  &:after {
+    content: 'expand_more';
+    font-family: 'Material Icons';
+    font-feature-settings: 'liga';
+    font-size: 18px;
+    font-style: normal;
+    line-height: 1;
+    position: absolute;
+    right: -4.5px;
+    text-rendering: optimizelegibility;
+    text-transform: none;
+    top: -10px;
+  }
+}
+
+.dropup {
+  .caret {
+    &:after {
+      content: 'expand_less'
+    }
+    border-bottom: 0;
+  }
+  
+}
+
+/* Bth Icons */
+
+@font-face {
+  font-family: 'bth-icons';
+  font-style: normal;
+  font-weight: normal;
+  src:  url('#{$icons-path}/BthIcons.eot');
+  src:  url('#{$icons-path}/BthIcons.eot?#iefix') format('embedded-opentype'),
+    url('#{$icons-path}/BthIcons.ttf') format('truetype'),
+    url('#{$icons-path}/BthIcons.woff') format('woff'),
+    url('#{$icons-path}/BthIcons.svg') format('svg');
+}

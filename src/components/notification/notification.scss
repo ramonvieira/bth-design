@@ -1,0 +1,97 @@
+// Global
+@import '../../variables';
+
+// Local
+@import 'variables';
+
+
+
+#globalMessageSection.global-message {
+  bottom: 0;
+  font-family: $base-font;
+  left: 20px;
+  position: fixed;
+  right: auto;
+  top: unset !important;
+  .alert {
+    background-color: $gray-dark-30 !important;
+    border-color: $gray-dark-30 !important;
+    padding: 8px 8px 8px 38px;
+    position: relative;
+    .close {
+      color: $gray-light-30;
+      font-size: 26px;
+      font-weight: 400;
+      height: 20px;
+      margin: 0;
+      opacity: 1;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      right: 8px;
+      text-shadow: none;
+      top: 0;
+    }
+    &:before {
+      color: $gray-light-30;
+      content: '';
+      direction: ltr;
+      font-family: Material Icons,Arial,sans-serif;
+      font-feature-settings: 'liga';
+      font-size: 22px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      height: 100%;
+      left: 8px;
+      letter-spacing: normal;
+      line-height: 20px;
+      margin-right: 10px;
+      opacity: 1;
+      padding: 0;
+      position: absolute;
+      text-rendering: optimizeLegibility;
+      text-transform: none;
+      top: 8px;
+      white-space: nowrap;
+      word-wrap: normal;
+    }
+    .row-fluid {
+      font-size: 14px !important;
+      padding-right: 24px;
+    }
+    &.alert-danger {
+      background-color: $gray-dark-30 !important;
+      color: $gray-light-30 !important;
+      &:before {
+        color: palette('red', 'light-10');
+        content: 'error';
+      }
+    }
+    &.alert-success {
+      background-color: $gray-dark-30 !important;
+      color: $gray-light-30 !important;
+      &:before {
+        color: palette('green', 'light-10');
+        content: 'check_circle';
+      }
+    }
+    &.alert-warning {
+      background-color: $gray-dark-30 !important;
+      color: $gray-light-30 !important;
+      &:before {
+        color: palette('yellow', 'light-10');
+        content: 'warning';
+      }
+    }
+    &.alert-info {
+      background-color: $gray-dark-30 !important;
+      color: $gray-light-30 !important;
+      &:before {
+        color: palette('aqua', 'light-10');
+        content: 'info';
+      }
+    }
+  }
+}
+
+//stylelint-enable

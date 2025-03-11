@@ -1,0 +1,11 @@
+// Variáveis
+
+// As variáveis devem seguir o seguinte padrão `$componente-estado-propriedade-tamanho`.
+// Ex.: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+$tree-line-color: $gray-light-20;
+$tree-padding: 10;
+$tree-item-select: palette('purple', 'light-10');;
+$tree-item-select-text: $white;
+$tree-font-color: darken($gray, 14%);
+$tree-font-color-hover: $gray-light-20;

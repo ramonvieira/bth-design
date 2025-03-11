@@ -1,0 +1,94 @@
+// Global
+@import '../../variables';
+
+// Local
+@import 'variables';
+
+@function str-split($string, $separator) {
+  $split-arr: ();
+  $index: str-index($string, $separator);
+  @while $index != null {
+    $item: str-slice($string, 1, $index - 1);
+    $split-arr: append($split-arr, $item);
+    $string: str-slice($string, $index + 1);
+    $index: str-index($string, $separator);
+  }
+
+  $split-arr: append($split-arr, $string);
+
+  @return $split-arr;
+}
+
+@mixin make-colors($colors, $color-name, $prop, $prefix) {
+  @each $name, $value in $colors {
+    &.#{$prefix} {
+      @if $name == 'base' {
+        &__#{$color-name}:before {
+          #{$prop}: $value;
+        }
+      }
+      @else {
+        $modif: str-split($name, '-');
+        $lum: str-slice(nth($modif, 1), 0, 1);
+        $weight: nth($modif, 2);
+
+        &__#{$color-name}--#{$lum}#{$weight}:before {
+          #{$prop}: $value;
+        }
+      }
+    }
+  }
+}
+
+.bth-status {
+  color: $gray-dark-30;
+  padding-left: 20px;
+  position: relative;
+
+  &:before {
+    background-color: $status;
+    border-radius: $border-radius-large;
+    content: '';
+    display: block;
+    height: 8px;
+    left: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+  }
+
+  &.bth-status--primary {
+    &:before {
+      background-color: $status-primary;
+    }
+  }
+
+  &.bth-status--success {
+    &:before {
+      background-color: $status-success;
+    }
+  }
+
+  &.bth-status--danger {
+    &:before {
+      background-color: $status-danger;
+    }
+  }
+
+  &.bth-status--warning {
+    &:before {
+      background-color: $status-warning;
+    }
+  }
+
+  &.bth-status--info {
+    &:before {
+      background-color: $status-info;
+    }
+  }
+
+  @each $name, $value in $colors {
+    @include make-colors($value, $name, 'background-color', 'bth-status');
+  }
+}

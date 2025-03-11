@@ -1,0 +1,1 @@
+import './menu-vertical.scss';

@@ -1,0 +1,25 @@
+// Variáveis
+
+// As variáveis devem seguir o seguinte padrão `$componente-estado-propriedade-tamanho`.
+// Ex.: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+$toast-primary: $aqua;
+$toast-border-primary: $aqua;
+$toast-link-primary: palette('aqua', 'dark-10');
+
+$toast-warning: $yellow;
+$toast-border-warning: $yellow;
+$toast-link-warning: palette('yellow', 'dark-10');
+
+$toast-danger: $red;
+$toast-border-danger: $red;
+$toast-link-danger: palette('red', 'dark-10');
+
+$toast-success: $green;
+$toast-border-success: $green;
+$toast-link-success: palette('green', 'dark-10');
+
+$toast-body: $white;
+$toast-close: $white;
+$toast-close-hover: $gray-dark-20;
+$toast-content: $gray-dark-30;

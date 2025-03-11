@@ -1,0 +1,36 @@
+@import '../../_variables';
+// Variáveis
+// As variáveis devem seguir o seguinte padrão `$componente-estado-propriedade-tamanho`.
+// Ex.: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+$badge-default: (
+  'background': $gray-light-20,
+  'color': $gray-dark-20
+);
+
+$badge-primary: (
+  'background': palette('blue', 'light-20'),
+  'color': $white
+);
+
+$badge-success: (
+  'background': palette('green', 'dark-10'),
+  'color': $white
+);
+
+$badge-danger: (
+  'background': $red,
+  'color': $white
+);
+
+$badge-warning: (
+  'background': $yellow,
+  'color': $gray-dark-30
+);
+
+$badge-info: (
+  'background': palette('aqua', 'light-10'),
+  'color': $gray-dark-30
+);
+
+$badge-background : $gray-light-20;

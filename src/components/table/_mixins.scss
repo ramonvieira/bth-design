@@ -1,0 +1,10 @@
+@mixin warning-undo($hover: false) {
+  &.warning-undo {
+    background-color: palette('yellow', 'light-40') !important;
+    @if $hover {
+      &:hover {
+        background-color: light(palette('yellow', 'light-30'), 5%) !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,588 @@
+/**
+* Date Picker
+* ----------------------------------------------------------------------------------------------
+*/
+
+body > {
+  .ui-datepicker {
+    background: $white;
+    border: 1px solid $gray-light-10;
+    border-radius: $border-radius-small;
+    box-shadow: 0 3px 6px mix($black, transparent, 20%);
+    margin-top: 11px;
+    padding: 12px;
+    position: absolute;
+    z-index: 2000 !important;
+    /* N�o pode ser usada a var�avel $zindexModal, pois n�o estamos usando o modal padr�o do bootstrap */
+    &:after,
+    &:before {
+      border-color: transparent;
+      border-style: solid;
+      border-width: 11px;
+      content: " ";
+      display: block;
+      height: 0;
+      left: calc(50% - 5px);
+      position: absolute;
+      top: -20px;
+      width: 0;
+    }
+    &:after {
+      border-bottom-color: $white;
+      border-width: 10px;
+    }
+    &:before {
+      border-bottom-color: $gray-light-10;
+      border-width: 12px;
+      left: calc(50% - 7px);
+      top: -24px;
+    }
+  }
+}
+
+.ui-datepicker {
+  &.ui-datepicker-years {
+    .ui-datepicker-calendar {
+      width: 100%;
+    }
+  }
+  &.timeOnly {
+    table {
+      margin: 0 auto;
+      table-layout: fixed;
+      width: 60px;
+    }
+    th,
+    td {
+      text-align: center;
+    }
+    .ui-timepicker-div {
+      margin-bottom: 4px;
+      .ui-slider-vertical {
+        height: 155px;
+        margin: 0 auto;
+      }
+    }
+  }
+  .ui-datepicker-header {
+    line-height: 32px;
+    margin-bottom: 2px;
+    position: relative;
+    text-align: center;
+  }
+  .ui-datepicker-header:not(.ui-timepicker-groupTime) {
+    width: 196px;
+  }
+  /**
+	* Agrupador dos selects
+	*/
+  .ui-datepicker-title {
+    display: flex;
+    justify-content: center;
+    line-height: 32px;
+    margin: 0 29px;
+    text-align: center;
+    @include clearfix;
+    select {
+      background-color: $white;
+      border-color: $gray;
+      border-left: 0;
+      border-radius: 0;
+      border-right: 0;
+      border-style: solid;
+      border-width: 1px;
+      color: $gray-dark-20;
+      display: inline-block;
+      flex-grow: 1;
+      font-size: 13px;
+      line-height: $line-height-base;
+      margin: 1px 0;
+      padding: 6px;
+      vertical-align: middle;
+      width: 49%;
+      &:last-child {
+        border-bottom-right-radius: $border-radius-small;
+        border-right: 1px solid $gray;
+        border-top-right-radius: $border-radius-small;
+      }
+      &:first-child {
+        border-bottom-left-radius: $border-radius-small;
+        border-left: 1px solid $gray;
+        border-top-left-radius: $border-radius-small;
+      }
+      +select {
+        border-left: 1px solid $gray;
+      }
+      .ui-datepicker-year {
+        float: right;
+      }
+    }
+  }
+  /**
+	* Calend�rio com mais de um m�s
+	*/
+  .ui-datepicker-group {
+    float: left;
+    width: 205px;
+  }
+  .ui-datepicker-row-break {
+    display: none;
+  }
+  &.ui-datepicker-multi {
+    width: auto !important;
+  }
+  &.ui-datepicker-multi {
+    .ui-datepicker-group-first,
+    .ui-datepicker-group-last {
+      width: 205px;
+    }
+    .ui-datepicker-group-first {
+      margin-left: 0;
+    }
+    .ui-datepicker-group-last {
+      margin-right: 0;
+    }
+    .ui-datepicker-title {
+      line-height: 36px;
+    }
+    .ui-timepicker-div {
+      margin-left: auto;
+      margin-top: auto;
+    }
+  }
+  /**
+	* Tabela do calendario
+  */
+
+  &:not(.ui-datepicker-years) {
+    .ui-datepicker-calendar {
+      .ui-state-default {
+        width: 22px;
+      }
+    }
+  }
+
+  .ui-datepicker-calendar {
+    border-collapse: collapse;
+    float: left;
+    /* Border Radius */
+    /**
+		* Dia da semana (Cabeçalho)
+		*/
+    th {
+      color: $gray-dark-30;
+      font-size: 11px;
+      padding: 5px 0;
+      text-align: center;
+    }
+    /* Dias - Normal */
+    .ui-state-default {
+      border-radius: $border-radius-small;
+      color: $gray-dark-30;
+      display: inline-block;
+      font-size: 11px;
+      margin: 3px;
+      padding: 3px;
+      text-align: center;
+      @include box-sizing(border-box);
+    }
+    /* Hover/Focus */
+    .ui-state-hover,
+    .ui-state-focus {
+      background-color: $gray;
+      text-decoration: none;
+    }
+    /* Dia atual */
+    .ui-datepicker-today a {
+      background-color: transparent;
+      color: $blue;
+      font-weight: font('primary', 'weight', 'semi-bold');
+      &:hover {
+        color: $gray-dark-30;
+      }
+    }
+    /* Dia ativo */
+    .ui-datepicker-current-day .ui-state-active {
+      background-color: $blue;
+      color: $white;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .ui-datepicker-week-end a {
+      color: $gray-dark-10;
+    }
+  }
+  .ui-state-disabled {
+    &.ui-corner-all {
+      &:hover {
+        background-color: $gray-light-40;
+      }
+      color: $gray;
+      opacity: 1;
+    }
+  }
+  /**
+	* Painel de bot�es
+	*/
+  .ui-datepicker-buttonpane {
+    border-top: 1px solid $gray-light-10;
+    clear: both;
+    margin-top: 12px;
+    min-width: 120px;
+    padding-top: 12px;
+    @include clearfix;
+    button {
+      background: $gray-light-40;
+      border: 1px solid $gray;
+      border-radius: $border-radius-small;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 12px;
+      font-weight: font('primary', 'weight', 'semi-bold');
+      line-height: $line-height-base;
+      margin-bottom: 0; // For input.btn
+      padding: 4px 12px;
+      text-align: center;
+      text-transform: uppercase;
+      vertical-align: middle;
+      &.ui-datepicker-current {
+        float: left;
+      }
+      &.ui-datepicker-close {
+        float: right;
+      }
+      &:hover,
+      &:focus {
+        background-color: $btn-default-bg-hover;
+        background-position: 0 -15px;
+        text-decoration: none;
+        @include transition(background-position .1s linear);
+      }
+    }
+  }
+}
+
+/*
+	* Cabe�alho
+	*/
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  background-color: transparent;
+  background-image: none;
+  border-radius: $border-radius-small;
+  border: none;
+  box-shadow: none;
+  color: $gray-dark-20;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.475;
+  margin-bottom: 0;
+  padding: 6px 12px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 1px;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  &:hover {
+    background-color: $gray-light-20;
+    color: $gray-dark-30;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  span {
+    font-family: FontAwesome;
+  }
+}
+
+.ui-datepicker-prev {
+  left: 0px;
+  .ui-icon:before {
+    content: '\f104';
+  }
+}
+
+.ui-datepicker-next {
+  right: 0px;
+  .ui-icon:before {
+    content: '\f105';
+  }
+}
+
+/**
+	* Timepicker
+	* ----------------------------------------------------------------------------------------------
+	*/
+
+.dateTime .ui-timepicker-div {
+  background: $white;
+  border-left: 1px solid $gray-light-10;
+  border-radius: 0;
+  float: left;
+  height: 100%;
+  margin-bottom: 13px;
+  margin-left: 15px;
+  margin-top: -36px;
+  padding-left: 15px;
+  right: -81px;
+  width: 72px;
+  .ui-timepicker-padding {
+    height: 100%;
+  }
+  /* 
+		* A tabela acompanha o tamanho do dataPicker. 
+		*/
+  table {
+    height: 80%;
+    margin: 0 auto;
+    table-layout: fixed;
+    width: 60px;
+  }
+  th {
+    color: $gray-dark-20;
+    font-size: 11px;
+    padding: 5px 0;
+    text-align: center;
+  }
+  td {
+    padding: 0;
+    text-align: center;
+  }
+  .ui-timepicker-groupTime {
+    line-height: 35px;
+    text-align: center;
+  }
+  .ui-slider-vertical {
+    height: 138px;
+    margin: 0 auto;
+  }
+}
+
+/*
+ * jQuery UI Slider 1.10.0
+ *
+ * Copyright 2013, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Slider#theming
+ */
+
+.ui-slider {
+  position: relative;
+  text-align: left;
+  .ui-slider-handle {
+    border-radius: 50%;
+    cursor: pointer;
+    height: 12px;
+    left: -5px;
+    margin-bottom: -6px;
+    position: absolute;
+    width: 12px;
+    z-index: 2;
+  }
+  .ui-slider-range {
+    background-color: $blue;
+    border: 0;
+    display: block;
+    font-size: .7em;
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+.ui-slider-horizontal {
+  border: 1px solid $gray-light-10;
+  height: .8em;
+  margin: 6px 0;
+  .ui-slider-handle {
+    margin-left: -.6em;
+    top: -.3em;
+  }
+  .ui-slider-range {
+    height: 100%;
+    top: 0;
+  }
+}
+
+.ui-slider-vertical {
+  background-color: $gray-light-10;
+  height: 185px;
+  margin: 0 6px;
+  width: 2px;
+  .ui-slider-handle {
+    background-color: $blue;
+  }
+  .ui-slider-range {
+    left: 0;
+    width: 100%;
+  }
+  .ui-slider-range-min {
+    bottom: 0;
+  }
+  .ui-slider-range-max {
+    top: 0;
+  }
+}
+
+/**
+* Autocomplete
+* ----------------------------------------------------------------------------------------------
+*/
+
+.ui-autocomplete {
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background-color: $dropdown-bg;
+  border: 1px solid $gray-light-10;
+  /* Neces�rio para funcionar no IE8 */
+  border: 1px solid $dropdown-border;
+  display: none;
+  float: left;
+  font-size: $font-size-base;
+  list-style: none;
+  margin: 2px 0 0;
+  min-width: 160px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: $zindex-dropdown;
+  @include box-shadow(0 5px 10px mix($black, transparent, 20%));
+  @include border-top-radius(6px);
+  @include border-right-radius(6px);
+  @include border-bottom-radius(6px);
+  @include border-left-radius(6px);
+  &.pull-right {
+    left: auto;
+    right: 0;
+  }
+  >li>a:hover>[class^='icon-'],
+  >li>a:hover>[class*=' icon-'],
+  >li>a:focus>[class^='icon-'],
+  >li>a:focus>[class*=' icon-'],
+  >.active>a>[class^='icon-'],
+  >.active>a>[class*=' icon-'],
+  a.ui-state-focus {
+    background-image: url($iconWhiteSpritePath);
+  }
+  /* TODO: Testar se realmente ï¿½ necessï¿½rio */
+  >.active>a,
+  >.active>a:hover,
+  >.active>a:focus,
+  a.ui-state-focus {
+    outline: 0;
+    @include linear-gradient($dropdown-link-active-bg, $dropdown-link-active-bg, darken($dropdown-link-active-bg, 5%));
+  }
+  >.disabled>a,
+  >.disabled>a.ui-state-focus {
+    color: $gray-light;
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      background-image: none;
+      cursor: default;
+      @include reset-filter();
+    }
+  }
+  >li>a {
+    clear: both;
+    color: $dropdown-link-color;
+    display: block;
+    font-weight: normal;
+    line-height: $line-height-base;
+    padding: 3px 20px;
+    white-space: nowrap;
+    &:hover,
+    &:focus,
+    &.ui-state-focus {
+      color: $dropdown-link-hover-color;
+      text-decoration: none;
+      @include linear-gradient($dropdown-link-hover-bg, $dropdown-link-hover-bg, darken($dropdown-link-hover-bg, 5%));
+    }
+  }
+}
+
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/**
+ * Spinner
+ * ----------------------------------------------------------------------------------------------
+ */
+
+.ui-spinner {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  [class^='icon-'],
+  [class*=' icon-'] {
+    // top: 4px;
+    left: -10px;
+    position: absolute;
+  }
+  input {
+    margin: 0;
+  }
+  .ui-spinner-input:focus {
+    z-index: initial;
+  }
+}
+
+.ui-spinner-button {
+  /*.buttonBackground($btn-default-bg, $btn-default-color, $gray-dark, 0 1px 1px rgba(255,255,255,.75));*/
+  border: 1px solid $input-border;
+  cursor: pointer;
+  font-size: 14px;
+  height: 14px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-indent: 8px;
+  width: 22px;
+  z-index: 2;
+  @include box-shadow('inset 0 1px 1px rgba(0,0,0,.075)');
+  @include transition(e('border linear .2s, box-shadow linear .2s'));
+  &:hover,
+  &:focus {
+    background-position: 0 -15px;
+    color: $gray-dark;
+    text-decoration: none;
+    @include transition(background-position .1s linear);
+  }
+  &.ui-spinner-up {
+    top: 0;
+    @include border-top-radius($border-radius-base);
+    .icon-sort-up {
+      margin-top: 3px;
+    }
+  }
+  &.ui-spinner-down {
+    bottom: 0;
+    @include border-bottom-radius($border-radius-base);
+    .icon-sort-down {
+      margin-top: -2px;
+    }
+  }
+}
+
+.defaultSkin table.mceLayout,
+.defaultSkin table.mceLayout tr.mceFirst td {
+  @include border-top-radius(5px);
+  @include border-right-radius(5px);
+  @include border-bottom-radius(0px);
+  @include border-left-radius(0px);
+}

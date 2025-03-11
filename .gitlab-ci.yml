@@ -1,0 +1,131 @@
+image: 'digitallyseamless/nodejs-bower-grunt' 
+
+cache:
+  untracked: true
+  key: $CI_BUILD_REF_NAME
+  paths:
+    - node_modules/
+
+stages:
+  - install
+  - build
+  - publish
+
+# Template com as configurações do node
+.npm-config_template: &npm-config
+  before_script:
+    - npm config set registry http://nexus3.betha.com.br/repository/npm-all/ --silent
+    
+# Template com a autenticação do nexus
+.npm-config_auth: &npm-auth
+  before_script:
+    - npm config set email $NEXUS_EMAIL --silent
+    - npm config set _auth $NEXUS_PASSWORD --silent
+
+# Template com as configurações do build
+.build_template: &build-default
+  stage: build
+  dependencies:
+    - install
+  allow_failure: false
+  artifacts:
+    paths:
+      - dist/
+  tags:
+    - builder
+
+# Template com as configurações do publish
+.publish_aws_template: &publish-aws-default
+  image: garland/aws-cli-docker
+  stage: publish
+  when: manual
+  script:
+    - aws s3 sync dist ${AWS_S3_BUCKET}/base/g4/design/${CI_COMMIT_REF_NAME} --delete
+  tags:
+    - builder
+
+# Instala dependências
+install:
+  <<: *npm-config
+  stage: install
+  allow_failure: false
+  script:
+    - npm install
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - node_modules/
+  tags:
+    - builder
+
+# Constrói para teste
+build:test:
+  <<: *build-default
+  environment:
+    name: test
+  only:
+  - master
+  - tags
+  - '/^feature-.*/'
+  script:
+    - npm run build:test
+
+# Constrói para produção
+build:prod:
+  <<: *build-default
+  environment:
+    name: production
+  only:
+    - master
+    - tags
+  script:
+    - npm run build:prod
+
+# Publica no BUCKET de test do AWS
+publish:test:
+  <<: *publish-aws-default
+  environment:
+    name: test
+    url: $AWS_S3_BUCKET/base/g4/design/$CI_COMMIT_REF_NAME
+  dependencies:
+    - build:test
+  only:
+    - master
+    - tags
+    - '/^feature-.*/'
+  variables:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID_TEST}
+      AWS_S3_BUCKET: ${AWS_S3_BUCKET_TEST}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY_TEST}
+
+# Publica no BUCKET de produção do AWS
+publish:prod:
+  <<: *publish-aws-default
+  environment:
+    name: production
+    url: $AWS_S3_BUCKET/base/g4/design/$CI_COMMIT_REF_NAME
+  dependencies:
+    - build:prod
+  only:
+    - tags
+  variables:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID_PRODUCTION}
+      AWS_S3_BUCKET: ${AWS_S3_BUCKET_PRODUCTION}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY_PRODUCTION}
+
+# Publica no Nexus o resultado do build de produção
+publish:nexus:
+  <<: *npm-config
+  <<: *npm-auth
+  stage: publish
+  environment:
+    name: production
+  when: manual
+  dependencies: 
+    - build:prod
+  script:
+    - npm publish
+  only:
+    - tags
+  tags:
+    - builder

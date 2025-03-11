@@ -1,0 +1,98 @@
+// Global
+@import '../../config';
+// Local
+@import 'variables';
+$root: '.bth-powernumber';
+$rootHasIcon: $root+'--has-icon';
+$rootInline: $root+'--inline';
+$rootSmall: $root+'--small';
+#{$root} {
+  display: inline-block;
+  &__value {
+    font-size: 30px;
+    font-weight: font('primary', 'weight', 'semi-bold');
+    line-height: 30px;
+    margin: 0;
+  }
+  &__desc {
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
+
+#{$rootHasIcon} {
+  padding-left: 60px;
+  position: relative;
+  text-align: left;
+  #{$root} {
+    &__icon {
+      font-size: 45px;
+      left: 0;
+      position: absolute;
+      top: calc(50% - 32px);
+    }
+  }
+}
+
+#{$rootInline} {
+  display: inline-block;
+  text-align: right;
+  #{$root} {
+    &__value {
+      color: $gray-dark-20;
+      display: inline-block;
+      font-size: 18px;
+      line-height: 18px;
+    }
+  }
+  .btn {
+    padding: 0;
+    vertical-align: top;
+    &.btn-xs {
+      vertical-align: middle;
+      .material-icons {
+        font-size: 12px;
+        line-height: 12px;
+        width: 12px;
+      }
+    }
+    &.btn-sm {
+      .material-icons {
+        line-height: 18px;
+        width: 18px;
+      }
+    }
+    .material-icons {
+      display: block;
+      margin-top: 0;
+    }
+  }
+}
+
+#{$rootInline}+#{$rootInline} {
+  border-left: 1px solid $gray-light-10;
+  margin-left: 8px;
+  padding-left: 8px;
+}
+
+#{$rootSmall} {
+  #{$root} {
+    &__value {
+      font-size: 20px;
+      line-height: 20px;
+    }
+    &__desc {
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+}
+
+#{$rootInline + $rootSmall} {
+  #{$root} {
+    &__value {
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import '../../config';
+
+.panel {
+  box-shadow: none;
+  margin-bottom: 10px;
+
+  .panel-heading {
+    padding: 6px 12px;
+
+    &.panel-heading--unbordered {
+      border: none;
+    }
+  }
+}

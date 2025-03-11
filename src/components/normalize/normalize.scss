@@ -1,0 +1,142 @@
+// Global
+@import '../../config';
+
+// Local
+@import 'variables';
+
+$background-color: $gray-light-20;
+$font-name: 'Helvetica Neue',
+'Helvetica',
+'Arial',
+sans-serif;
+
+@media (max-width: 767px) {
+  html,
+  body {
+    background-color: $gray-light-40 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  html,
+  body {
+    background-color: $gray-light-40 !important;
+  }
+}
+
+html,
+body {
+  background: $background-color;
+  color: $gray-dark-30;
+}
+
+body {
+  font-family: $base-font;
+  padding-top: 53px;
+}
+
+a {
+  color: $blue;
+
+  &.disabled {
+    color: $gray;
+
+    &:hover {
+      color: $gray;
+      text-decoration: none;
+      cursor: not-allowed;
+    }
+  }
+
+  &:focus {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    color: palette('blue', 'dark-10');
+  }
+}
+
+.label {
+  font-weight: 600;
+  line-height: inherit;
+  border-radius: 50px;
+  font-size: 11px;
+
+  &-default {
+    background-color: $gray-light-10;
+    color: $gray-dark-30;
+  }
+
+  &-primary {
+    background-color: $blue;
+    color: $gray-light-40;
+  }
+
+  &-success {
+    background-color: palette('green', 'dark-10');
+    color: $gray-light-40;
+  }
+
+  &-danger {
+    background-color: $red;
+    color: $gray-light-40;
+  }
+
+  &-warning {
+    background-color: $yellow;
+    color: $gray-dark-30;
+  }
+
+  &-info {
+    background-color: palette('aqua', 'light-10');
+    color: $gray-dark-30;
+  }
+}
+
+.required-icon {
+  font-family: $font-name;
+}
+
+.in .animate-repeat.ng-move,
+.in .animate-repeat.ng-enter,
+.in .animate-repeat.ng-leave {
+  transition: 300ms ease-in-out all;
+}
+
+.in .animate-repeat.ng-move,
+.in .animate-repeat.ng-enter.ng-enter-active,
+.in .animate-repeat.ng-leave {
+  height: 21px;
+  left: 0;
+  opacity: 1;
+}
+
+.in .animate-repeat.ng-move.ng-move-active,
+.in .animate-repeat.ng-leave.ng-leave-active,
+.in .animate-repeat.ng-enter {
+  height: 0;
+  left: 30px;
+  opacity: 0;
+}
+
+.field-error .select2-choice:focus,
+.field-error .select2-choices:focus,
+.field-error:focus,
+.table td.has-edit .field-error:focus {
+  border-color: $red !important;
+  box-shadow: none !important;
+}
+
+kbd {
+  background-color: $white;
+  border: 1px solid $gray-light-20;
+  border-left-color: $gray-light-10;
+  border-radius: $border-radius-small;
+  border-top-color: $gray-light-10;
+  box-shadow: inset 0 1px 3px mix($white, transparent, 50%), 1px 1px 0 mix($black, transparent, 18%);
+  color: $gray-dark-30;
+  font-size: .85em;
+  font-weight: 500;
+  padding: 1px 5px;
+}

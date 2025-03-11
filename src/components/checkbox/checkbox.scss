@@ -1,0 +1,120 @@
+// Global
+@import '../../variables';
+
+// Local
+@import 'variables';
+
+.bth-checkbox {
+  display: block;
+
+  label {
+    color: $gray-dark-30;
+    font-family: $base-font;
+    font-size: 14px;
+    overflow-wrap: normal;
+    padding-left: 16px;
+    text-indent: 8px;
+    text-overflow: ellipsis;
+    word-break: normal;
+
+    &:after {
+      color: $gray-dark-20;
+      font-size: 14px;
+      left: 1px;
+      width: 16px;
+    }
+
+    &:before {
+      border: 2px solid $checkbox-default;
+      border-radius: $border-radius-small;
+      height: 15px;
+      left: 1px;
+      top: 2px;
+      width: 15px;
+    }
+  }
+
+  input {
+    outline: none;
+    &[type='checkbox'] {
+      &:checked + label:after {
+        background-color: $blue;
+        border-radius: $border-radius-small;
+        color: $white;
+        content: 'check';
+        font-family: $base-icon;
+        font-size: 15px;
+        height: 15px;
+        left: 1px;
+        text-transform: lowercase;
+        top: 2px;
+        width: 15px;
+      }
+      &:focus + label:before {
+        outline: 5px auto focus-ring-color;
+      }
+
+      &:indeterminate + label:after {
+        border-bottom: 3px solid $gray;
+        content: '';
+        display: block;
+        height: 1px;
+        left: 5px;
+        top: 8px;
+        width: 7px;
+      }
+    }
+  }
+
+  &.check-success,
+  &.bth-checkbox-success {
+    [type='checkbox'] {
+      &:checked + label:after {
+        background-color: $green;
+      }
+    }
+  }
+
+  &.check-primary,
+  &.bth-checkbox-primary {
+    [type='checkbox'] {
+      &:checked + label:after {
+        background-color: $blue;
+      }
+    }
+  }
+
+  &.check-danger,
+  &.bth-checkbox-danger {
+    [type='checkbox'] {
+      &:checked + label:after {
+        background-color: $red;
+      }
+    }
+  }
+
+  &.check-info,
+  &.bth-checkbox-info {
+    [type='checkbox'] {
+      &:checked + label:after {
+        background-color: $aqua;
+      }
+    }
+  }
+
+  &.check-warning,
+  &.bth-checkbox-warning {
+    [type='checkbox'] {
+      &:checked + label:after {
+        background-color: $yellow;
+      }
+    }
+  }
+
+  &.bth-checkbox-inline {
+    display: inline;
+  }
+  &.criteria-not {
+    text-decoration: line-through;
+  }
+}

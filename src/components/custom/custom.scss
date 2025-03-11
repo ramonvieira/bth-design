@@ -1,0 +1,673 @@
+// Global
+@import '../../config';
+
+/* Suporte */
+
+/* O P&D disponibiliza a identificação do grupo em uppercase */
+
+/* Cor padrão */
+
+.iv .bth,
+.iv .BTH {
+  background: $main-brand-color !important;
+  background-color: $main-brand-color;
+}
+
+/* Gestão Municipal */
+
+.iv .MUN,
+.iv .mun {
+  background-color: rgba($color: map-get($brand-colors, 'brown'), $alpha: .3) !important;
+
+  i,
+  path{
+    color: map-get($brand-colors, 'brown');
+    fill: map-get($brand-colors, 'brown') !important;
+  }
+
+  .icone-produto{
+    background-color: rgba($color: map-get($brand-colors, 'brown'), $alpha: .6) !important;
+  }
+
+  &:hover{
+    background-color: rgba($color: map-get($brand-colors, 'brown'), $alpha: .6) !important;
+    .icone-produto{
+      background-color: map-get($brand-colors, 'brown') !important;
+    }
+  }
+
+  .b-icon-modulo{
+    color: map-get($brand-colors, 'brown');
+    border-color: map-get($brand-colors, 'brown') !important;
+  }
+}
+
+/* Planejamento e Contabilidade */
+
+.iv .PLA,
+.iv .pla {
+  background-color: rgba($color: map-get($brand-colors, 'lilac'), $alpha: .3) !important;
+
+  i,
+  path{
+    color: map-get($brand-colors, 'lilac');
+    fill: map-get($brand-colors, 'lilac') !important;
+  }
+
+  .icone-produto{
+    background-color: rgba($color: map-get($brand-colors, 'lilac'), $alpha: .6) !important;
+  }
+
+  &:hover{
+    background-color: rgba($color: map-get($brand-colors, 'lilac'), $alpha: .6) !important;
+    .icone-produto{
+      background-color: map-get($brand-colors, 'lilac') !important;
+    }
+  }
+
+  .b-icon-modulo{
+    color: map-get($brand-colors, 'lilac');
+    border-color: map-get($brand-colors, 'lilac') !important;
+  }
+}
+
+/* Arrecadação e Fiscalização */
+
+.iv .ARR,
+.iv .arr {
+  background-color: rgba($color: map-get($brand-colors, 'lime'), $alpha: .3) !important;
+
+  i,
+  path{
+    color: map-get($brand-colors, 'lime');
+    fill: map-get($brand-colors, 'lime') !important;
+  }
+
+  .icone-produto{
+    background-color: rgba($color: map-get($brand-colors, 'lime'), $alpha: .6) !important;
+  }
+
+  &:hover{
+    background-color: rgba($color: map-get($brand-colors, 'lime'), $alpha: .6) !important;
+    .icone-produto{
+      background-color: map-get($brand-colors, 'lime') !important;
+    }
+  }
+
+  .b-icon-modulo{
+    color: map-get($brand-colors, 'lime');
+    border-color: map-get($brand-colors, 'lime') !important;
+  }
+}
+
+/* Atendimento */
+
+.iv .ATE,
+.iv .ate {
+  background-color: rgba($color: map-get($brand-colors, 'gray'), $alpha: .3) !important;
+
+  i,
+  path{
+    color: map-get($brand-colors, 'gray');
+    fill: map-get($brand-colors, 'gray') !important;
+  }
+
+  .icone-produto{
+    background-color: rgba($color: map-get($brand-colors, 'gray'), $alpha: .6) !important;
+  }
+
+  &:hover{
+    background-color: rgba($color: map-get($brand-colors, 'gray'), $alpha: .6) !important;
+    .icone-produto{
+      background-color: map-get($brand-colors, 'gray') !important;
+    }
+  }
+
+  .b-icon-modulo{
+    color: map-get($brand-colors, 'gray');
+    border-color: map-get($brand-colors, 'gray') !important;
+  }
+}
+
+/* Gestão de Compras e Contratos */
+
+.iv .COM,
+.iv .com {
+  background-color: rgba($color: map-get($brand-colors, 'red'), $alpha: .3) !important;
+
+  i,
+  path{
+    color: map-get($brand-colors, 'red');
+    fill: map-get($brand-colors, 'red') !important;
+  }
+
+  .icone-produto{
+    background-color: rgba($color: map-get($brand-colors, 'red'), $alpha: .6) !important;
+  }
+
+  &:hover{
+    background-color: rgba($color: map-get($brand-colors, 'red'), $alpha: .6) !important;
+    .icone-produto{
+      background-color: map-get($brand-colors, 'red') !important;
+    }
+  }
+
+  .b-icon-modulo{
+    color: map-get($brand-colors, 'red');
+    border-color: map-get($brand-colors, 'red') !important;
+  }
+}
+
+/* Pessoal e Recursos Humanos */
+
+.iv .PES,
+.iv .pes {
+  background-color: rgba($color: map-get($brand-colors, 'cian'), $alpha: .3) !important;
+
+  i,
+  path{
+    color: map-get($brand-colors, 'cian');
+    fill: map-get($brand-colors, 'cian') !important;
+  }
+
+  .icone-produto{
+    background-color: rgba($color: map-get($brand-colors, 'cian'), $alpha: .6) !important;
+  }
+
+  &:hover{
+    background-color: rgba($color: map-get($brand-colors, 'cian'), $alpha: .6) !important;
+    .icone-produto{
+      background-color: map-get($brand-colors, 'cian') !important;
+    }
+  }
+
+  .b-icon-modulo{
+    color: map-get($brand-colors, 'cian');
+    border-color: map-get($brand-colors, 'cian') !important;
+  }
+}
+
+/* NoPaper */
+
+.iv .NOP,
+.iv .nop {
+  background-color: rgba($color: map-get($brand-colors, 'blue'), $alpha: .3) !important;
+
+  i,
+  path{
+    color: map-get($brand-colors, 'blue');
+    fill: map-get($brand-colors, 'blue') !important;
+  }
+
+  .icone-produto{
+    background-color: rgba($color: map-get($brand-colors, 'blue'), $alpha: .6) !important;
+  }
+
+  &:hover{
+    background-color: rgba($color: map-get($brand-colors, 'blue'), $alpha: .6) !important;
+    .icone-produto{
+      background-color: map-get($brand-colors, 'blue') !important;
+    }
+  }
+
+  .b-icon-modulo{
+    color: map-get($brand-colors, 'blue');
+    border-color: map-get($brand-colors, 'blue') !important;
+  }
+}
+
+/* Saúde e Assistência Social */
+
+.iv .SAU,
+.iv .sau {
+  background-color: rgba($color: map-get($brand-colors, 'green'), $alpha: .3) !important;
+
+  i,
+  path{
+    color: map-get($brand-colors, 'green');
+    fill: map-get($brand-colors, 'green') !important;
+  }
+
+  .icone-produto{
+    background-color: rgba($color: map-get($brand-colors, 'green'), $alpha: .6) !important;
+  }
+
+  &:hover{
+    background-color: rgba($color: map-get($brand-colors, 'green'), $alpha: .6) !important;
+    .icone-produto{
+      background-color: map-get($brand-colors, 'green') !important;
+    }
+  }
+
+  .b-icon-modulo{
+    color: map-get($brand-colors, 'green');
+    border-color: map-get($brand-colors, 'green') !important;
+  }
+}
+
+/* Educação e Gestão Escolar */
+
+.iv .EDU,
+.iv .edu {
+  background-color: rgba($color: map-get($brand-colors, 'yellow'), $alpha: .3) !important;
+
+  i,
+  path{
+    color: map-get($brand-colors, 'yellow');
+    fill: map-get($brand-colors, 'yellow') !important;
+  }
+
+  .icone-produto{
+    background-color: rgba($color: map-get($brand-colors, 'yellow'), $alpha: .6) !important;
+  }
+
+  &:hover{
+    background-color: rgba($color: map-get($brand-colors, 'yellow'), $alpha: .6) !important;
+    .icone-produto{
+      background-color: map-get($brand-colors, 'yellow') !important;
+    }
+  }
+
+  .b-icon-modulo{
+    color: map-get($brand-colors, 'yellow');
+    border-color: map-get($brand-colors, 'yellow') !important;
+  }
+}
+
+/* Gestão de Leis Municipais */
+
+.iv .LEI,
+.iv .lei {
+  background-color: rgba($color: map-get($brand-colors, 'orange'), $alpha: .3) !important;
+
+  i,
+  path{
+    color: map-get($brand-colors, 'orange');
+    fill: map-get($brand-colors, 'orange') !important;
+  }
+
+  .icone-produto{
+    background-color: rgba($color: map-get($brand-colors, 'orange'), $alpha: .6) !important;
+  }
+
+  &:hover{
+    background-color: rgba($color: map-get($brand-colors, 'orange'), $alpha: .6) !important;
+    .icone-produto{
+      background-color: map-get($brand-colors, 'orange') !important;
+    }
+  }
+
+  .b-icon-modulo{
+    color: map-get($brand-colors, 'orange');
+    border-color: map-get($brand-colors, 'orange') !important;
+  }
+}
+
+/* Componentes Genéricos e Performance Corporativa */
+
+.iv .GEN,
+.iv .gen,
+.iv .PEC,
+.iv .pec { 
+  background-color: rgba($color: map-get($brand-colors, 'gray'), $alpha: .3) !important;
+
+  i,
+  path{
+    color: map-get($brand-colors, 'blue');
+    fill: map-get($brand-colors, 'blue') !important;
+  }
+
+  .icone-produto{
+    background-color: rgba($color: map-get($brand-colors, 'blue'), $alpha: .3) !important;
+  }
+
+  &:hover{
+    background-color: rgba($color: map-get($brand-colors, 'gray'), $alpha: .6) !important;
+    .icone-produto{
+      background-color: map-get($brand-colors, 'blue') !important;
+      color: rgba($color: $white, $alpha: .8) !important;
+    }
+  }
+
+  .b-icon-modulo{
+    color: map-get($brand-colors, 'blue');
+    border-color: map-get($brand-colors, 'blue') !important;
+  }
+  
+}
+
+.iv .SUP,
+.iv .sup {
+  background-color: rgba($color: map-get($additional-colors, 'petrol'), $alpha: .3) !important;
+
+  i,
+  path{
+    color: map-get($additional-colors, 'petrol');
+    fill: map-get($additional-colors, 'petrol') !important;
+  }
+
+  .icone-produto{
+    background-color: rgba($color: map-get($additional-colors, 'petrol'), $alpha: .6) !important;
+  }
+
+  &:hover{
+    background-color: rgba($color: map-get($additional-colors, 'petrol'), $alpha: .6) !important;
+    .icone-produto{
+      background-color: map-get($additional-colors, 'petrol') !important;
+    }
+  }
+
+  .b-icon-modulo{
+    color: map-get($additional-colors, 'petrol');
+    border-color: map-get($additional-colors, 'petrol') !important;
+  }
+}
+
+/* =====================================================
+	 Mixins Suite
+	 ===================================================== */
+
+@mixin corSuite($bg,
+$text) {
+  //loading
+  .icon-spinner {
+    border-top-color: $bg;
+  } //borda megamenu
+  .megamenu-container {
+    border-bottom: 3px solid $bg;
+  } //icone historico
+  .bth-historico-icon:after,
+  .bth-historico-icon-full:after {
+    color: $bg;
+  }
+}
+
+.suite-mun {
+  @include corSuite(map-get($brand-colors, 'brown'),
+  $text: $white);
+}
+
+.suite-pla {
+  @include corSuite(map-get($brand-colors, 'lilac'),
+  $text: $white);
+}
+
+.suite-arr {
+  @include corSuite(map-get($brand-colors, 'lime'),
+  $text: $white);
+}
+
+.suite-ate {
+  @include corSuite(map-get($brand-colors, 'gray'),
+  $text: $white);
+}
+
+.suite-com {
+  @include corSuite(map-get($brand-colors, 'red'),
+  $text: $white);
+}
+
+.suite-pes {
+  @include corSuite(map-get($brand-colors, 'cian'),
+  $text: $white);
+}
+
+.suite-nop {
+  @include corSuite(map-get($brand-colors, 'blue'),
+  $text: $white);
+}
+
+.suite-sau {
+  @include corSuite(map-get($brand-colors, 'green'),
+  $text: $white);
+}
+
+.suite-edu {
+  @include corSuite(map-get($brand-colors, 'yellow'),
+  $text: $white);
+}
+
+.suite-lei {
+  @include corSuite(map-get($brand-colors, 'orange'),
+  $text: $white);
+}
+
+.suite-gen,
+.suite-pec {
+  @include corSuite($bg: map-get($brand-colors, 'blue'), $text: $white);
+  .megamenu .icone-modulo {
+    background-color: map-get($brand-colors, 'blue');
+  }
+}
+
+.suite-sup {
+  @include corSuite($bg: map-get($brand-colors, 'brown'), $text: $white);
+  .megamenu .icone-modulo {
+    background-color: map-get($brand-colors, 'brown');
+  }
+}
+
+/* =====================================================
+	 Notificações
+	 ===================================================== */
+
+@mixin thumb($cor,
+$icon:'') {
+  background-color: $cor;
+  border-radius: 50%; //border-color: $cor;
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 10px;
+  overflow: hidden;
+  text-align: center;
+  width: 40px;
+  &:before {
+    color: $white;
+    content: $icon;
+    font-family: FontAwesome;
+    font-size: 20px;
+  }
+}
+
+/* Gestão Municipal */
+
+.thumb-mun {
+  @include thumb(map-get($brand-colors, 'brown'));
+}
+
+.thumb-custos {
+  @include thumb(map-get($brand-colors, 'brown'),
+  '\f080');
+}
+
+/* Planejamento e Contabilidade */
+
+.thumb-pla {
+  @include thumb(map-get($brand-colors, 'lilac'));
+}
+
+.thumb-contabil {
+  @include thumb(map-get($brand-colors, 'lilac'),
+  '\f1ec');
+}
+
+.thumb-planejamento {
+  @include thumb(map-get($brand-colors, 'lilac'),
+  '\f274');
+}
+
+.thumb-tesouraria {
+  @include thumb(map-get($brand-colors, 'lilac'),
+  '\f0c2');
+}
+
+/* Arrecadação e Fiscalização */
+
+.thumb-arr {
+  @include thumb(map-get($brand-colors, 'lime'));
+}
+
+.thumb-livro {
+  @include thumb(map-get($brand-colors, 'lime'),
+  '\f0c2');
+}
+
+.thumb-tributos {
+  @include thumb(map-get($brand-colors, 'lime'),
+  '\f155');
+}
+
+.thumb-procuradoria {
+  @include thumb(map-get($brand-colors, 'lime'),
+  '\f24e');
+}
+
+/* Atendimento */
+
+.thumb-ate {
+  @include thumb(map-get($brand-colors, 'gray'));
+}
+
+/* Gestão de Compras e Contratos */
+
+.thumb-com {
+  @include thumb(map-get($brand-colors, 'red'));
+}
+
+.thumb-compras {
+  @include thumb(map-get($brand-colors, 'red'),
+  '\f07a');
+}
+
+.thumb-estoque {
+  @include thumb(map-get($brand-colors, 'red'),
+  '\f1b3');
+}
+
+.thumb-frotas {
+  @include thumb(map-get($brand-colors, 'red'),
+  '\f0d1');
+}
+
+/* Pessoal e Recursos Humanos */
+
+.thumb-pes {
+  @include thumb(map-get($brand-colors, 'cian'));
+}
+
+.thumb-folha {
+  @include thumb(map-get($brand-colors, 'cian'),
+  '\f0f6');
+}
+
+.thumb-ponto {
+  @include thumb(map-get($brand-colors, 'cian'),
+  '\f1ac');
+}
+
+.thumb-rh {
+  @include thumb(map-get($brand-colors, 'cian'),
+  '\f0c0');
+}
+
+/* NoPaper */
+
+.thumb-nop {
+  @include thumb(map-get($brand-colors, 'blue'));
+}
+
+/* Saúde e Assistência Social */
+.thumb-sau {
+  @include thumb(map-get($brand-colors, 'green'), 
+  '\f21e');
+}
+
+/* Educação e Gestão Escolar */
+
+.thumb-edu {
+  @include thumb(map-get($brand-colors, 'yellow'));
+}
+
+.thumb-educacao {
+  @include thumb(map-get($brand-colors, 'yellow'),
+  '\f19d');
+}
+
+.thumb-escola {
+  @include thumb(map-get($brand-colors, 'yellow'),
+  '\f1ae');
+}
+
+/* Gestão de Leis Municipais */
+
+.thumb-lei {
+  @include thumb(map-get($brand-colors, 'orange'));
+}
+
+/* Componentes Genéricos e Performance Corporativa*/
+
+.thumb-gen,
+.thumb-pec {
+  @include thumb(map-get($additional-colors, 'blue'));
+}
+
+.thumb-processo {
+  @include thumb(map-get($additional-colors, 'blue'),
+  '\f085');
+}
+
+/* Suporte */
+
+.thumb-sup {
+  @include thumb(map-get($additional-colors, 'petrol'));
+}
+
+/* Gerenciador de Script e Relatório */
+
+.thumb-script {
+  @include thumb(map-get($additional-colors, 'blue'),
+  '\f121');
+}
+
+.thumb-relatorio {
+  @include thumb(map-get($additional-colors, 'blue'),
+  '\f0c5');
+}
+
+/* Sistemas Internos */
+
+.thumb-atendimento {
+  @include thumb(map-get($additional-colors, 'blue'),
+  '\f1cd');
+}
+
+.thumb-crm {
+  @include thumb(map-get($additional-colors, 'blue'),
+  '\f0b1');
+}
+
+.thumb-planejamento-estrategico {
+  @include thumb(map-get($additional-colors, 'blue'),
+  '\f080');
+}
+
+.thumb-paineis {
+  @include thumb(map-get($additional-colors, 'blue'),
+  '\f200');
+}
+
+.thumb-tarefas {
+  @include thumb(map-get($additional-colors, 'blue'),
+  '\f046');
+}
+
+.thumb-rh-si {
+  @include thumb(map-get($additional-colors, 'blue'),
+  '\f0c0');
+}
+
+.thumb-acionadores {
+  @include thumb(map-get($additional-colors, 'blue'),
+  '\f074');
+}
