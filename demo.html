@@ -4,282 +4,918 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>bth-design Framework Demo</title>
+  <title>Demonstração de Componentes BTH Design</title>
   <link rel="stylesheet" href="./dist/bth-design.css">
   <style>
-    body {
-      font-family: 'Open Sans', Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      color: #1C1A23;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    h1, h2, h3 {
-      margin-top: 0;
-    }
-
-    .header {
-      background-color: #1C1A23;
-      color: #FFF;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    .section {
+    .demo-section {
       margin-bottom: 30px;
       padding: 20px;
-      border-radius: 6px;
-      border: 1px solid #eee;
+      border: 1px solid #ddd;
+      border-radius: 5px;
     }
-
-    .color-swatch {
-      width: 100%;
-      height: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 10px;
-      border-radius: 6px;
-      color: white;
-      font-weight: bold;
+    .demo-section h2 {
+      margin-top: 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
     }
-
-    .demo-section {
-      margin-bottom: 20px;
+    .demo-section .description {
+      margin-bottom: 15px;
+      color: #666;
+    }
+    body {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
   </style>
 </head>
 <body>
-  <header class="header">
-    <div class="container">
-      <h1>bth-design Framework Demo</h1>
+  <h1>Componentes BTH Design 4.0.5</h1>
+  <p>Exemplos de uso para cada componente do framework.</p>
+
+  <!-- Alert -->
+  <div class="demo-section">
+    <h2>Alert</h2>
+    <div class="description">Componente para mensagens de alerta.</div>
+    
+    <div class="alert alert-success" role="alert">
+      <strong>Sucesso!</strong> Operação realizada com sucesso.
     </div>
-  </header>
+    
+    <div class="alert alert-info" role="alert">
+      <strong>Informação!</strong> Uma mensagem informativa.
+    </div>
+    
+    <div class="alert alert-warning" role="alert">
+      <strong>Aviso!</strong> Atenção a este detalhe.
+    </div>
+    
+    <div class="alert alert-danger" role="alert">
+      <strong>Erro!</strong> Algo deu errado.
+    </div>
+  </div>
 
-  <main class="container">
-    <!-- Cores -->
-    <section class="section">
-      <h2>Cores</h2>
+  <!-- Attach -->
+  <div class="demo-section">
+    <h2>Attach</h2>
+    <div class="description">Componente para anexos de arquivos.</div>
+    
+    <div class="attach">
+      <div class="attach-item">
+        <span class="attach-name">documento.pdf</span>
+        <span class="attach-size">2.5MB</span>
+        <button class="attach-remove">Remover</button>
+      </div>
+      
+      <div class="attach-item">
+        <span class="attach-name">imagem.jpg</span>
+        <span class="attach-size">1.2MB</span>
+        <button class="attach-remove">Remover</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Badge -->
+  <div class="demo-section">
+    <h2>Badge</h2>
+    <div class="description">Componente para exibir contadores e indicadores.</div>
+    
+    <span class="badge">42</span>
+    <span class="badge badge-primary">Novo</span>
+    <span class="badge badge-success">Aprovado</span>
+    <span class="badge badge-warning">Pendente</span>
+    <span class="badge badge-danger">Rejeitado</span>
+  </div>
+
+  <!-- Banner -->
+  <div class="demo-section">
+    <h2>Banner</h2>
+    <div class="description">Componente para destaque de informações.</div>
+    
+    <div class="banner">
+      <div class="banner-content">
+        <h3>Título do Banner</h3>
+        <p>Conteúdo importante em destaque para o usuário.</p>
+      </div>
+      <div class="banner-action">
+        <button class="btn btn-primary">Ação</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Breadcrumb -->
+  <div class="demo-section">
+    <h2>Breadcrumb</h2>
+    <div class="description">Componente para navegação hierárquica.</div>
+    
+    <ol class="breadcrumb">
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Categoria</a></li>
+      <li class="active">Página Atual</li>
+    </ol>
+  </div>
+
+  <!-- Button -->
+  <div class="demo-section">
+    <h2>Button</h2>
+    <div class="description">Componente para botões de ação.</div>
+    
+    <button type="button" class="btn btn-default">Padrão</button>
+    <button type="button" class="btn btn-primary">Primário</button>
+    <button type="button" class="btn btn-success">Sucesso</button>
+    <button type="button" class="btn btn-info">Informação</button>
+    <button type="button" class="btn btn-warning">Aviso</button>
+    <button type="button" class="btn btn-danger">Perigo</button>
+    <button type="button" class="btn btn-link">Link</button>
+  </div>
+
+  <!-- Calendar -->
+  <div class="demo-section">
+    <h2>Calendar</h2>
+    <div class="description">Componente para visualização de calendário.</div>
+    
+    <div class="calendar">
+      <div class="calendar-header">
+        <button class="calendar-prev">&lt;</button>
+        <span class="calendar-title">Junho 2023</span>
+        <button class="calendar-next">&gt;</button>
+      </div>
+      <div class="calendar-weekdays">
+        <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+      </div>
+      <div class="calendar-days">
+        <!-- Dias do calendário seriam gerados dinamicamente -->
+        <div class="calendar-day">1</div>
+        <div class="calendar-day">2</div>
+        <div class="calendar-day calendar-selected">3</div>
+        <div class="calendar-day">4</div>
+        <!-- ... outros dias ... -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Card -->
+  <div class="demo-section">
+    <h2>Card</h2>
+    <div class="description">Componente para exibição de conteúdo em cartões.</div>
+    
+    <div class="bth-card">
+      <div class="bth-card-header">
+        <h3 class="bth-card-title">Título do Cartão</h3>
+      </div>
+      <div class="bth-card-body">
+        <p>Conteúdo do cartão com informações relevantes para o usuário.</p>
+      </div>
+      <div class="bth-card-footer">
+        <button class="btn btn-primary">Ação</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkbox -->
+  <div class="demo-section">
+    <h2>Checkbox</h2>
+    <div class="description">Componente para seleção múltipla.</div>
+    
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Opção 1
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" checked> Opção 2 (selecionada)
+      </label>
+    </div>
+    <div class="checkbox disabled">
+      <label>
+        <input type="checkbox" disabled> Opção 3 (desabilitada)
+      </label>
+    </div>
+  </div>
+
+  <!-- Comment -->
+  <div class="demo-section">
+    <h2>Comment</h2>
+    <div class="description">Componente para comentários e discussões.</div>
+    
+    <div class="comment-list">
+      <div class="comment">
+        <div class="comment-avatar">
+          <img src="https://via.placeholder.com/50" alt="Avatar">
+        </div>
+        <div class="comment-content">
+          <div class="comment-author">João Silva</div>
+          <div class="comment-date">10/06/2023 10:30</div>
+          <div class="comment-text">Este é um comentário de exemplo para demonstração.</div>
+          <div class="comment-actions">
+            <button class="btn btn-link">Responder</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Container -->
+  <div class="demo-section">
+    <h2>Container</h2>
+    <div class="description">Componente para organização de conteúdo em containers.</div>
+    
+    <div class="container">
       <div class="row">
-        <div class="col-md-3">
-          <div class="color-swatch bg-red">Red</div>
-        </div>
-        <div class="col-md-3">
-          <div class="color-swatch bg-blue">Blue</div>
-        </div>
-        <div class="col-md-3">
-          <div class="color-swatch bg-green">Green</div>
-        </div>
-        <div class="col-md-3">
-          <div class="color-swatch bg-yellow">Yellow</div>
+        <div class="col-md-12">
+          <p>Este é um conteúdo dentro de um container.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- Tipografia -->
-    <section class="section">
-      <h2>Tipografia</h2>
-      <div class="demo-section">
-        <h1>Título H1</h1>
-        <h2>Título H2</h2>
-        <h3>Título H3</h3>
-        <h4>Título H4</h4>
-        <h5>Título H5</h5>
-        <h6>Título H6</h6>
-        <p>Parágrafo normal com <strong>texto em negrito</strong> e <em>texto em itálico</em>.</p>
-        <a href="#">Link padrão</a>
+  <!-- Context -->
+  <div class="demo-section">
+    <h2>Context</h2>
+    <div class="description">Componente para menus de contexto.</div>
+    
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+        Menu de Contexto <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Ação 1</a></li>
+        <li><a href="#">Ação 2</a></li>
+        <li><a href="#">Ação 3</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Ação separada</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Date Range -->
+  <div class="demo-section">
+    <h2>Date Range</h2>
+    <div class="description">Componente para seleção de intervalos de datas.</div>
+    
+    <div class="input-group date-range">
+      <input type="text" class="form-control" value="01/06/2023 - 30/06/2023">
+      <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+    </div>
+  </div>
+
+  <!-- Dropdown -->
+  <div class="demo-section">
+    <h2>Dropdown</h2>
+    <div class="description">Componente para menus suspensos.</div>
+    
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Dropdown
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Item 1</a></li>
+        <li><a href="#">Item 2</a></li>
+        <li><a href="#">Item 3</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Empty States -->
+  <div class="demo-section">
+    <h2>Empty States</h2>
+    <div class="description">Componente para exibição de estados vazios.</div>
+    
+    <div class="empty-state">
+      <div class="empty-state-icon">
+        <i class="fa fa-search"></i>
       </div>
-    </section>
+      <h3 class="empty-state-title">Nenhum resultado encontrado</h3>
+      <p class="empty-state-message">Tente ajustar os filtros ou fazer uma nova busca.</p>
+      <button class="btn btn-primary">Nova Busca</button>
+    </div>
+  </div>
 
-    <!-- Botões -->
-    <section class="section">
-      <h2>Botões</h2>
-      <div class="demo-section">
-        <button class="btn btn-primary">Primary</button>
-        <button class="btn btn-secondary">Secondary</button>
-        <button class="btn btn-success">Success</button>
-        <button class="btn btn-danger">Danger</button>
-        <button class="btn btn-warning">Warning</button>
-        <button class="btn btn-info">Info</button>
-        <button class="btn btn-light">Light</button>
-        <button class="btn btn-dark">Dark</button>
+  <!-- Filter -->
+  <div class="demo-section">
+    <h2>Filter</h2>
+    <div class="description">Componente para filtros de busca.</div>
+    
+    <div class="filter">
+      <div class="filter-header">
+        <h3>Filtros</h3>
       </div>
-    </section>
-
-    <!-- Alertas -->
-    <section class="section">
-      <h2>Alertas</h2>
-      <div class="demo-section">
-        <div class="alert alert-primary">
-          <strong>Primary!</strong> Este é um alerta primário.
+      <div class="filter-body">
+        <div class="form-group">
+          <label>Nome</label>
+          <input type="text" class="form-control">
         </div>
-        <div class="alert alert-secondary">
-          <strong>Secondary!</strong> Este é um alerta secundário.
-        </div>
-        <div class="alert alert-success">
-          <strong>Success!</strong> Este é um alerta de sucesso.
-        </div>
-        <div class="alert alert-danger">
-          <strong>Danger!</strong> Este é um alerta de perigo.
-        </div>
-        <div class="alert alert-warning">
-          <strong>Warning!</strong> Este é um alerta de aviso.
-        </div>
-        <div class="alert alert-info">
-          <strong>Info!</strong> Este é um alerta informativo.
-        </div>
-      </div>
-    </section>
-
-    <!-- Cards -->
-    <section class="section">
-      <h2>Cards</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-header">
-              <h3>Card Title</h3>
-            </div>
-            <div class="card-body">
-              <p>Este é um exemplo de card simples.</p>
-            </div>
-            <div class="card-footer">
-              <button class="btn btn-primary">Ação</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-header">
-              <h3>Card with Image</h3>
-            </div>
-            <img src="https://via.placeholder.com/300x150" alt="Placeholder" class="card-img">
-            <div class="card-body">
-              <p>Card com imagem.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-header">
-              <h3>Card List</h3>
-            </div>
-            <ul class="list-group">
-              <li class="list-group-item">Item 1</li>
-              <li class="list-group-item">Item 2</li>
-              <li class="list-group-item">Item 3</li>
-            </ul>
-          </div>
+        <div class="form-group">
+          <label>Status</label>
+          <select class="form-control">
+            <option>Ativo</option>
+            <option>Inativo</option>
+          </select>
         </div>
       </div>
-    </section>
-
-    <!-- Formulários -->
-    <section class="section">
-      <h2>Formulários</h2>
-      <div class="demo-section">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Senha</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
-          </div>
-          <div class="checkbox">
-            <input type="checkbox" id="exampleCheck1">
-            <label for="exampleCheck1">Lembrar-me</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
+      <div class="filter-footer">
+        <button class="btn btn-primary">Aplicar</button>
+        <button class="btn btn-default">Limpar</button>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- Tabelas -->
-    <section class="section">
-      <h2>Tabelas</h2>
-      <div class="demo-section">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Nome</th>
-              <th>Sobrenome</th>
-              <th>Username</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
+  <!-- Filter By -->
+  <div class="demo-section">
+    <h2>Filter By</h2>
+    <div class="description">Componente para filtros rápidos.</div>
+    
+    <div class="filter-by">
+      <label>Filtrar por:</label>
+      <div class="filter-by-options">
+        <button class="filter-by-option active">Todos</button>
+        <button class="filter-by-option">Ativos</button>
+        <button class="filter-by-option">Inativos</button>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- Modals -->
-    <section class="section">
-      <h2>Modals</h2>
-      <div class="demo-section">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-          Launch demo modal
-        </button>
+  <!-- Form -->
+  <div class="demo-section">
+    <h2>Form</h2>
+    <div class="description">Componente para formulários.</div>
+    
+    <form class="form">
+      <div class="form-group">
+        <label for="exampleInput1">Nome</label>
+        <input type="text" class="form-control" id="exampleInput1" placeholder="Digite seu nome">
+      </div>
+      <div class="form-group">
+        <label for="exampleInput2">Email</label>
+        <input type="email" class="form-control" id="exampleInput2" placeholder="Digite seu email">
+      </div>
+      <div class="form-group">
+        <label for="exampleSelect">Selecione uma opção</label>
+        <select class="form-control" id="exampleSelect">
+          <option>Opção 1</option>
+          <option>Opção 2</option>
+          <option>Opção 3</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Modal title</h4>
+  <!-- Grid -->
+  <div class="demo-section">
+    <h2>Grid</h2>
+    <div class="description">Componente para layout em grade.</div>
+    
+    <div class="row">
+      <div class="col-md-4">
+        <div style="background-color: #f1f1f1; padding: 15px;">Coluna 1</div>
+      </div>
+      <div class="col-md-4">
+        <div style="background-color: #e5e5e5; padding: 15px;">Coluna 2</div>
+      </div>
+      <div class="col-md-4">
+        <div style="background-color: #f1f1f1; padding: 15px;">Coluna 3</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Help -->
+  <div class="demo-section">
+    <h2>Help</h2>
+    <div class="description">Componente para exibição de ajuda.</div>
+    
+    <div class="help">
+      <button class="help-trigger"><i class="fa fa-question-circle"></i></button>
+      <div class="help-content">
+        <h4>Ajuda</h4>
+        <p>Este é um texto de ajuda para auxiliar o usuário.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kanban -->
+  <div class="demo-section">
+    <h2>Kanban</h2>
+    <div class="description">Componente para quadros Kanban.</div>
+    
+    <div class="kanban">
+      <div class="kanban-column">
+        <div class="kanban-column-header">A fazer</div>
+        <div class="kanban-column-body">
+          <div class="kanban-card">Tarefa 1</div>
+          <div class="kanban-card">Tarefa 2</div>
+        </div>
+      </div>
+      <div class="kanban-column">
+        <div class="kanban-column-header">Em andamento</div>
+        <div class="kanban-column-body">
+          <div class="kanban-card">Tarefa 3</div>
+        </div>
+      </div>
+      <div class="kanban-column">
+        <div class="kanban-column-header">Concluído</div>
+        <div class="kanban-column-body">
+          <div class="kanban-card">Tarefa 4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Status -->
+  <div class="demo-section">
+    <h2>Status</h2>
+    <div class="description">Componente para indicação de status.</div>
+    
+    <div class="status status-success">Ativo</div>
+    <div class="status status-warning">Pendente</div>
+    <div class="status status-danger">Inativo</div>
+    <div class="status status-info">Em análise</div>
+  </div>
+
+  <!-- List Group -->
+  <div class="demo-section">
+    <h2>List Group</h2>
+    <div class="description">Componente para listas de itens.</div>
+    
+    <ul class="list-group">
+      <li class="list-group-item">Item 1</li>
+      <li class="list-group-item">Item 2</li>
+      <li class="list-group-item">Item 3</li>
+      <li class="list-group-item">Item 4</li>
+    </ul>
+  </div>
+
+  <!-- Loader -->
+  <div class="demo-section">
+    <h2>Loader</h2>
+    <div class="description">Componente para indicação de carregamento.</div>
+    
+    <div class="loader">Carregando...</div>
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Logo -->
+  <div class="demo-section">
+    <h2>Logo</h2>
+    <div class="description">Componente para exibição de logotipos.</div>
+    
+    <div class="logo">
+      <img src="https://via.placeholder.com/150x50" alt="Logo">
+    </div>
+  </div>
+
+  <!-- Megamenu -->
+  <div class="demo-section">
+    <h2>Megamenu</h2>
+    <div class="description">Componente para menus extensos.</div>
+    
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#megamenu">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <div class="collapse navbar-collapse" id="megamenu">
+          <ul class="nav navbar-nav">
+            <li class="dropdown megamenu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Megamenu <span class="caret"></span></a>
+              <div class="dropdown-menu megamenu-content">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h3>Categoria 1</h3>
+                    <ul>
+                      <li><a href="#">Item 1.1</a></li>
+                      <li><a href="#">Item 1.2</a></li>
+                      <li><a href="#">Item 1.3</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-md-4">
+                    <h3>Categoria 2</h3>
+                    <ul>
+                      <li><a href="#">Item 2.1</a></li>
+                      <li><a href="#">Item 2.2</a></li>
+                      <li><a href="#">Item 2.3</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-md-4">
+                    <h3>Categoria 3</h3>
+                    <ul>
+                      <li><a href="#">Item 3.1</a></li>
+                      <li><a href="#">Item 3.2</a></li>
+                      <li><a href="#">Item 3.3</a></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div class="modal-body">
-                <p>Modal body text goes here.</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Menu Vertical -->
+  <div class="demo-section">
+    <h2>Menu Vertical</h2>
+    <div class="description">Componente para menus verticais.</div>
+    
+    <div class="menu-vertical">
+      <ul>
+        <li class="active"><a href="#">Item 1</a></li>
+        <li><a href="#">Item 2</a></li>
+        <li><a href="#">Item 3</a>
+          <ul>
+            <li><a href="#">Subitem 3.1</a></li>
+            <li><a href="#">Subitem 3.2</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Item 4</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Menu Horizontal -->
+  <div class="demo-section">
+    <h2>Menu Horizontal</h2>
+    <div class="description">Componente para menus horizontais.</div>
+    
+    <div class="menu-horizontal">
+      <ul>
+        <li class="active"><a href="#">Item 1</a></li>
+        <li><a href="#">Item 2</a></li>
+        <li><a href="#">Item 3</a></li>
+        <li><a href="#">Item 4</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="demo-section">
+    <h2>Modal</h2>
+    <div class="description">Componente para janelas modais.</div>
+    
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Abrir Modal
+    </button>
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Título da Modal</h4>
+          </div>
+          <div class="modal-body">
+            <p>Conteúdo da modal...</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary">Salvar</button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- Tags -->
-    <section class="section">
-      <h2>Tags</h2>
-      <div class="demo-section">
-        <span class="tag">Default Tag</span>
-        <span class="tag tag-primary">Primary</span>
-        <span class="tag tag-success">Success</span>
-        <span class="tag tag-danger">Danger</span>
-        <span class="tag tag-warning">Warning</span>
-        <span class="tag tag-info">Info</span>
+  <!-- Nav -->
+  <div class="demo-section">
+    <h2>Nav</h2>
+    <div class="description">Componente para navegação em abas.</div>
+    
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#tab1" data-toggle="tab">Aba 1</a></li>
+      <li><a href="#tab2" data-toggle="tab">Aba 2</a></li>
+      <li><a href="#tab3" data-toggle="tab">Aba 3</a></li>
+    </ul>
+    
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab1">Conteúdo da Aba 1</div>
+      <div class="tab-pane" id="tab2">Conteúdo da Aba 2</div>
+      <div class="tab-pane" id="tab3">Conteúdo da Aba 3</div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="demo-section">
+    <h2>Navigation</h2>
+    <div class="description">Componente para navegação principal.</div>
+    
+    <nav class="navigation">
+      <ul>
+        <li class="active"><a href="#">Início</a></li>
+        <li><a href="#">Produtos</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Notification -->
+  <div class="demo-section">
+    <h2>Notification</h2>
+    <div class="description">Componente para notificações.</div>
+    
+    <div class="notification notification-success">
+      <div class="notification-icon"><i class="fa fa-check"></i></div>
+      <div class="notification-content">
+        <div class="notification-title">Sucesso</div>
+        <div class="notification-message">Operação realizada com sucesso!</div>
       </div>
-    </section>
-  </main>
+      <button class="notification-close">&times;</button>
+    </div>
+    
+    <div class="notification notification-danger">
+      <div class="notification-icon"><i class="fa fa-times"></i></div>
+      <div class="notification-content">
+        <div class="notification-title">Erro</div>
+        <div class="notification-message">Ocorreu um erro ao processar a solicitação.</div>
+      </div>
+      <button class="notification-close">&times;</button>
+    </div>
+  </div>
 
+  <!-- Panel -->
+  <div class="demo-section">
+    <h2>Panel</h2>
+    <div class="description">Componente para painéis de conteúdo.</div>
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Título do Painel</h3>
+      </div>
+      <div class="panel-body">
+        Conteúdo do painel.
+      </div>
+      <div class="panel-footer">
+        Rodapé do painel.
+      </div>
+    </div>
+  </div>
+
+  <!-- Popover -->
+  <div class="demo-section">
+    <h2>Popover</h2>
+    <div class="description">Componente para exibição de informações em popover.</div>
+    
+    <button type="button" class="btn btn-default" data-toggle="popover" title="Título do Popover" data-content="Conteúdo do popover com informações adicionais.">
+      Mostrar Popover
+    </button>
+  </div>
+
+  <!-- Products -->
+  <div class="demo-section">
+    <h2>Products</h2>
+    <div class="description">Componente para listagem de produtos.</div>
+    
+    <div class="products">
+      <div class="product">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/100" alt="Produto">
+        </div>
+        <div class="product-name">Nome do Produto</div>
+        <div class="product-price">R$ 99,90</div>
+        <button class="btn btn-primary">Comprar</button>
+      </div>
+      
+      <div class="product">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/100" alt="Produto">
+        </div>
+        <div class="product-name">Nome do Produto</div>
+        <div class="product-price">R$ 129,90</div>
+        <button class="btn btn-primary">Comprar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress -->
+  <div class="demo-section">
+    <h2>Progress</h2>
+    <div class="description">Componente para barras de progresso.</div>
+    
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+        60%
+      </div>
+    </div>
+    
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+        40%
+      </div>
+    </div>
+    
+    <div class="progress">
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+        75%
+      </div>
+    </div>
+  </div>
+
+  <!-- Radio -->
+  <div class="demo-section">
+    <h2>Radio</h2>
+    <div class="description">Componente para seleção única.</div>
+    
+    <div class="radio">
+      <label>
+        <input type="radio" name="exampleRadios" value="opcao1" checked>
+        Opção 1
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="exampleRadios" value="opcao2">
+        Opção 2
+      </label>
+    </div>
+    <div class="radio disabled">
+      <label>
+        <input type="radio" name="exampleRadios" value="opcao3" disabled>
+        Opção 3 (desabilitada)
+      </label>
+    </div>
+  </div>
+
+  <!-- Schedule -->
+  <div class="demo-section">
+    <h2>Schedule</h2>
+    <div class="description">Componente para agendamentos.</div>
+    
+    <div class="schedule">
+      <div class="schedule-header">
+        <div class="schedule-title">Agenda - Junho 2023</div>
+        <div class="schedule-actions">
+          <button class="btn btn-default">Dia</button>
+          <button class="btn btn-primary">Semana</button>
+          <button class="btn btn-default">Mês</button>
+        </div>
+      </div>
+      <div class="schedule-body">
+        <div class="schedule-event" style="background-color: #3ec18f;">
+          <div class="schedule-event-time">10:00 - 11:00</div>
+          <div class="schedule-event-title">Reunião com Cliente</div>
+        </div>
+        <div class="schedule-event" style="background-color: #e8b730;">
+          <div class="schedule-event-time">14:00 - 15:30</div>
+          <div class="schedule-event-title">Apresentação do Projeto</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scrollbar -->
+  <div class="demo-section">
+    <h2>Scrollbar</h2>
+    <div class="description">Componente para personalização de scrollbars.</div>
+    
+    <div class="custom-scrollbar" style="height: 100px; overflow-y: auto;">
+      <p>Conteúdo com scroll personalizado.</p>
+      <p>Mais conteúdo para gerar scroll.</p>
+      <p>Ainda mais conteúdo para gerar scroll.</p>
+      <p>Conteúdo adicional para gerar scroll.</p>
+      <p>Texto final para demonstração de scroll.</p>
+    </div>
+  </div>
+
+  <!-- Search -->
+  <div class="demo-section">
+    <h2>Search</h2>
+    <div class="description">Componente para busca.</div>
+    
+    <div class="search">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Buscar...">
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidepanel -->
+  <div class="demo-section">
+    <h2>Sidepanel</h2>
+    <div class="description">Componente para painéis laterais.</div>
+    
+    <button class="btn btn-primary" id="toggleSidepanel">Abrir Painel Lateral</button>
+    
+    <div class="sidepanel" id="exampleSidepanel">
+      <div class="sidepanel-header">
+        <h3>Painel Lateral</h3>
+        <button class="sidepanel-close">&times;</button>
+      </div>
+      <div class="sidepanel-body">
+        <p>Conteúdo do painel lateral.</p>
+      </div>
+      <div class="sidepanel-footer">
+        <button class="btn btn-primary">Confirmar</button>
+        <button class="btn btn-default">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider -->
+  <div class="demo-section">
+    <h2>Slider</h2>
+    <div class="description">Componente para seleção de valores em um intervalo.</div>
+    
+    <div class="slider">
+      <input type="range" min="0" max="100" value="50" class="slider-input">
+      <div class="slider-value">50</div>
+    </div>
+  </div>
+
+  <!-- Spread Sheet -->
+  <div class="demo-section">
+    <h2>Spread Sheet</h2>
+    <div class="description">Componente para exibição de planilhas.</div>
+    
+    <div class="spread-sheet">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A1</td>
+            <td>B1</td>
+            <td>C1</td>
+            <td>D1</td>
+          </tr>
+          <tr>
+            <td>A2</td>
+            <td>B2</td>
+            <td>C2</td>
+            <td>D2</td>
+          </tr>
+          <tr>
+            <td>A3</td>
+            <td>B3</td>
+            <td>C3</td>
+            <td>D3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Switch -->
+  <div class="demo-section">
+    <h2>Switch</h2>
+    <div class="description">Componente para alternância on/off.</div>
+    
+    <div class="bth-switch">
+      <input type="checkbox" id="switch1" checked>
+      <label for="switch1">Switch ligado</label>
+    </div>
+    
+    <div class="bth-switch">
+      <input type="checkbox" id="switch2">
+      <label for="switch2">Switch desligado</label>
+    </div>
+  </div>
+
+  <!-- Powernumber -->
+  <div class="demo-section">
+    <h2>Powernumber</h2>
+    <div class="description">Componente para exibição de números com destaque.</div>
+    
+    <div class="powernumber">
+      <div class="powernumber-value">42</div>
+      <div class="powernumber-label">Novos Registros</div>
+    </div>
+    
+    <div class="powernumber">
+      <div class="powernumber-value">87%</div>
+      <div class="powernumber-label">Satisfação</div>
+    </div>
+  </div>
+
+  <!-- G4 -->
+  <div class="demo-section">
+    <h2>G4</h2>
+    <div class="description">Componente para o framework G4.</div>
+    
+    <div class="g4-container">
+      <h3 class="g4-title">Componente G4</h3>
+      <p class="g4-text">Exemplo de conteúdo do componente G4.</p>
+    </div>
+  </div>
+
+  <!-- Importação de scripts -->
   <script src="./dist/bth-design.js"></script>
 </body>
 </html>
