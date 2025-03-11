@@ -47,20 +47,3 @@
     #{unquote($class-name)}: $value;
   }
 }
-
-// Mixin para aplicar o tema escuro
-@mixin dark-theme {
-  body {
-    background-color: $black;
-    color: $white;
-  }
-
-  a {
-    color: $link-color;
-    &:hover {
-      color: lighten($link-color, 10%);
-    }
-  }
-
-  // Adicione mais regras conforme necessário
-}

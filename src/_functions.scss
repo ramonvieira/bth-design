@@ -108,12 +108,3 @@
 @function dark($color, $amount) {
   @return hsl(hue($color), saturation($color), lightness($color) - $amount);
 }
-
-// Função para alternar entre temas
-@function theme-color($color, $theme: 'dark') {
-  @if $theme == 'dark' {
-    @return darken($color, 20%);
-  } @else {
-    @return $color;
-  }
-}

@@ -32,49 +32,49 @@ $font: (
 );
  
 // Colors
-$white: #000; // Invertido para preto
-$black: #FFF; // Invertido para branco
-$petrol: #E0E0E0; // Cor clara para contraste
+$white: #FFF;
+$black: #000;
+$petrol: #1C1A23;
 
 //  Cores institucionais
-$main-brand-color: #0761FF; // Mantido, mas pode ser ajustado se necessário
+$main-brand-color: #0761FF;
  
 //  Cores verticais
  $brand-colors: (
-   'brown'    : #6A5D4D, // Tons mais escuros
-  'lilac'    : #7A8BFF,
-  'lime'     : #00A56E,
-  'gray'     : #757575,
-  'red'      : #FF5A5A,
-  'cian'     : #0099CC,
-  'blue'     : #1A2E5A,
-  'green'    : #7FA55E,
-  'yellow'   : #D89C1E,
-  'orange'   : #D66C1E,
-  'blueLight': #2A4FCC,
+   'brown'    : #9A8B7D, // Gestão municipal
+   'lilac'    : #A6B8FF, // Contábil
+   'lime'     : #00BD7E, // Arrecadação
+   'gray'     : #A5A6A7, // Atendimento
+   'red'      : #FF7F7A, // Contratos
+   'cian'     : #00B0FF, // Pessoal
+   'blue'     : #263E81, // NoPaper
+   'green'    : #A7C27E, // Saúde
+   'yellow'   : #F9B02E, // Educação
+   'orange'   : #F4812E,
+   'blueLight': #3761F9, // Studio
  );
 
  $brand-colors-gradient: linear-gradient(to right, map-get($brand-colors, 'brown'), map-get($brand-colors, 'brown') 11.11%, map-get($brand-colors, 'lilac') 11.11%, map-get($brand-colors, 'lilac') 22.22%, map-get($brand-colors, 'lime') 22.22%, map-get($brand-colors, 'lime') 33.33%, map-get($brand-colors, 'gray') 33.33%, map-get($brand-colors, 'gray') 44.44%, map-get($brand-colors, 'red') 44.44%, map-get($brand-colors, 'red') 55.55%, map-get($brand-colors, 'cian') 55.55%, map-get($brand-colors, 'cian') 66.66%, map-get($brand-colors, 'green') 66.66%, map-get($brand-colors, 'green') 77.77%, map-get($brand-colors, 'yellow') 77.77%, map-get($brand-colors, 'yellow') 88.88%, map-get($brand-colors, 'orange') 88.88%, map-get($brand-colors, 'orange') 100%);
  
 // Cores adicionais utilizadas no sistema   
  $additional-colors: (
-   'blue'   : #007AAD,
-  'petrol' : #E0E0E0, // Cor clara para contraste
-  'gold'   : #8C6B2B
+   'blue'   : #009ADC,
+   'petrol' : #1C1A23,
+   'gold'   : #AD8B43
  );
 
 // Cores do sistema
-$red    : #C0312C;
-$pink   : #B8427F;
-$blue   : #2A5DBB;
-$aqua   : #3A9FB2;
-$green  : #34A87F;
-$yellow : #D0A320;
-$orange : #D06D20;
-$purple : #8F52A2;
+$red    : #dd413c;
+$pink   : #cb528f;
+$blue   : #3374db;
+$aqua   : #46afd2;
+$green  : #3ec18f;
+$yellow : #e8b730;
+$orange : #e87d30;
+$purple : #9f62b2;
 
 // Colors >> Gray 
-$gray          : #4F4F4F; // Tons mais escuros
+$gray          : #bfbfc0;
 $gray-dark-40  : $black;
 $gray-dark-30  : dark($gray, 61%);
 $gray-dark-20  : dark($gray, 40%);
