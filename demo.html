@@ -6,7 +6,7 @@
   <title>Demonstração de Componentes BTH Design</title>
   <link rel="stylesheet" href="./dist/bth-design.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="./theme-switcher.js"></script>t>
+  <script src="./theme-switcher.js"></script>
   <style>
     .demo-section {
       margin-bottom: 30px;
@@ -88,6 +88,59 @@
     }
     .theme-icon {
       margin-right: 8px;
+    }
+    
+    /* Estilos adicionais para o slider */
+    .slider {
+      position: relative;
+      margin: 20px 0;
+    }
+    
+    .slider-input {
+      width: 100%;
+      -webkit-appearance: none;
+      height: 8px;
+      border-radius: 4px;
+      background: #ddd;
+      outline: none;
+      margin-bottom: 10px;
+    }
+    
+    .slider-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #3374db;
+      cursor: pointer;
+    }
+    
+    .slider-input::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #3374db;
+      cursor: pointer;
+    }
+    
+    .slider-value {
+      font-weight: bold;
+      text-align: center;
+      color: var(--text-color, #333);
+    }
+    
+    /* Tema escuro para o slider */
+    .bth-dark-theme .slider-input {
+      background: #444;
+    }
+    
+    .bth-dark-theme .slider-input::-webkit-slider-thumb {
+      background: #5c97f5;
+    }
+    
+    .bth-dark-theme .slider-input::-moz-range-thumb {
+      background: #5c97f5;
     }
   </style>
 </head>
@@ -1023,7 +1076,17 @@
         $('#exampleSidepanel').removeClass('open');
       });
 
+      // Inicializar o slider
+      $('.slider-input').on('input', function() {
+        const value = $(this).val();
+        $(this).closest('.slider').find('.slider-value').text(value);
+      });
+      
       // Inicializar outros componentes conforme necessário
+      
+      // Inicialização do Bootstrap para componentes que usam dropdown, popover, etc.
+      $('[data-toggle="popover"]').popover();
+      $('[data-toggle="dropdown"]').dropdown();
     });
   </script>
 </body>
