@@ -4,6 +4,7 @@ import './assets';
 import './components/fonts';
 import './components/icons';
 import './components/normalize';
+import './components/theme/theme.scss';
 
 import './components/alert';
 import './components/attach';

@@ -1,0 +1,149 @@
+
+// Tema claro (padrão) e escuro para BTH Design
+
+:root {
+  // Variáveis de tema claro (valores padrão do sistema)
+  --bg-color: #{palette('white', 'base')};
+  --text-color: #{palette('gray', 'dark-30')};
+  --card-bg: #{palette('white', 'base')};
+  --card-border: #{palette('gray', 'light-10')};
+  --input-bg: #{palette('white', 'base')};
+  --input-border: #{palette('gray', 'light-5')};
+  --btn-default-bg: #{palette('gray', 'light-20')};
+  --btn-default-color: #{palette('gray', 'dark-30')};
+  --header-bg: #{map-get($additional-colors, 'petrol')};
+  --panel-bg: #{palette('white', 'base')};
+  --panel-border: #{palette('gray', 'light-10')};
+  --nav-bg: #{palette('white', 'base')};
+  --nav-active-bg: #{palette('blue', 'light-30')};
+  --nav-active-color: #{palette('blue', 'base')};
+  --menu-bg: #{palette('white', 'base')};
+  --menu-active-bg: #{palette('blue', 'light-30')};
+  --menu-active-color: #{palette('blue', 'base')};
+  --modal-bg: #{palette('white', 'base')};
+  --modal-overlay: rgba(0, 0, 0, 0.5);
+  --table-header-bg: #{palette('gray', 'light-10')};
+  --table-row-even: #{palette('white', 'base')};
+  --table-row-odd: #{palette('gray', 'light-30')};
+  --table-border: #{palette('gray', 'light-20')};
+}
+
+// Tema escuro
+.bth-dark-theme {
+  --bg-color: #{palette('gray', 'dark-40')};
+  --text-color: #{palette('gray', 'light-30')};
+  --card-bg: #{palette('gray', 'dark-30')};
+  --card-border: #{palette('gray', 'dark-20')};
+  --input-bg: #{palette('gray', 'dark-30')};
+  --input-border: #{palette('gray', 'dark-20')};
+  --btn-default-bg: #{palette('gray', 'dark-20')};
+  --btn-default-color: #{palette('gray', 'light-20')};
+  --header-bg: #{dark(map-get($additional-colors, 'petrol'), 10%)};
+  --panel-bg: #{palette('gray', 'dark-30')};
+  --panel-border: #{palette('gray', 'dark-20')};
+  --nav-bg: #{palette('gray', 'dark-30')};
+  --nav-active-bg: #{palette('blue', 'dark-30')};
+  --nav-active-color: #{palette('blue', 'light-20')};
+  --menu-bg: #{palette('gray', 'dark-30')};
+  --menu-active-bg: #{palette('blue', 'dark-30')};
+  --menu-active-color: #{palette('blue', 'light-20')};
+  --modal-bg: #{palette('gray', 'dark-30')};
+  --modal-overlay: rgba(0, 0, 0, 0.7);
+  --table-header-bg: #{palette('gray', 'dark-20')};
+  --table-row-even: #{palette('gray', 'dark-30')};
+  --table-row-odd: #{palette('gray', 'dark-40')};
+  --table-border: #{palette('gray', 'dark-10')};
+}
+
+// Aplicando as variáveis aos componentes genéricos
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+// Card
+.bth-card {
+  background-color: var(--card-bg);
+  border-color: var(--card-border);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+// Inputs
+input, select, textarea, .form-control {
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-color);
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+// Botões
+.btn-default {
+  background-color: var(--btn-default-bg);
+  color: var(--btn-default-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+// Painéis
+.panel {
+  background-color: var(--panel-bg);
+  border-color: var(--panel-border);
+  transition: background-color 0.3s, border-color 0.3s;
+  
+  .panel-heading {
+    background-color: var(--panel-bg);
+    border-color: var(--panel-border);
+  }
+}
+
+// Navegação
+.nav-tabs {
+  background-color: var(--nav-bg);
+  
+  > li.active > a {
+    background-color: var(--nav-active-bg);
+    color: var(--nav-active-color);
+  }
+}
+
+// Menus
+.menu-vertical, .menu-horizontal {
+  background-color: var(--menu-bg);
+  
+  li.active > a {
+    background-color: var(--menu-active-bg);
+    color: var(--menu-active-color);
+  }
+}
+
+// Modal
+.modal-content {
+  background-color: var(--modal-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-backdrop {
+  background-color: var(--modal-overlay);
+}
+
+// Tabelas
+.table {
+  color: var(--text-color);
+  
+  th {
+    background-color: var(--table-header-bg);
+  }
+  
+  tr:nth-child(even) {
+    background-color: var(--table-row-even);
+  }
+  
+  tr:nth-child(odd) {
+    background-color: var(--table-row-odd);
+  }
+  
+  td, th {
+    border-color: var(--table-border);
+  }
+}

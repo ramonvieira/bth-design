@@ -6,30 +6,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demonstração de Componentes BTH Design</title>
   <link rel="stylesheet" href="./dist/bth-design.css">
+  <script src="./theme-switcher.js"></script>
   <style>
     .demo-section {
       margin-bottom: 30px;
       padding: 20px;
-      border: 1px solid #ddd;
+      border: 1px solid var(--card-border, #ddd);
       border-radius: 5px;
+      background-color: var(--card-bg, #fff);
+      transition: background-color 0.3s, border-color 0.3s;
     }
     .demo-section h2 {
       margin-top: 0;
       padding-bottom: 10px;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid var(--card-border, #eee);
     }
     .demo-section .description {
       margin-bottom: 15px;
-      color: #666;
+      color: var(--text-color, #666);
     }
     body {
       padding: 20px;
       max-width: 1200px;
       margin: 0 auto;
     }
+    
+    /* Estilo do switch de tema */
+    .theme-switch-wrapper {
+      display: flex;
+      align-items: center;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 999;
+      background: var(--card-bg, #fff);
+      padding: 10px;
+      border-radius: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
+    }
+    .theme-switch-wrapper em {
+      margin-left: 10px;
+      font-size: 1rem;
+    }
+    .theme-switch {
+      display: inline-block;
+      height: 24px;
+      position: relative;
+      width: 50px;
+    }
+    .theme-switch input {
+      display: none;
+    }
+    .slider {
+      background-color: #ccc;
+      bottom: 0;
+      cursor: pointer;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: .4s;
+      border-radius: 34px;
+    }
+    .slider:before {
+      background-color: #fff;
+      bottom: 4px;
+      content: "";
+      height: 16px;
+      left: 4px;
+      position: absolute;
+      transition: .4s;
+      width: 16px;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #3374db;
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+    .theme-icon {
+      margin-right: 8px;
+    }
   </style>
 </head>
 <body>
+  <div class="theme-switch-wrapper">
+    <span class="theme-icon">☀️</span>
+    <label class="theme-switch" for="theme-switch">
+      <input type="checkbox" id="theme-switch">
+      <span class="slider"></span>
+    </label>
+    <span class="theme-icon">🌙</span>
+  </div>
+
   <h1>Componentes BTH Design 4.0.5</h1>
   <p>Exemplos de uso para cada componente do framework.</p>
 
@@ -917,5 +988,26 @@
 
   <!-- Importação de scripts -->
   <script src="./dist/bth-design.js"></script>
+  <script>
+    // Atualizar ícones do tema conforme estado atual
+    function updateThemeIcons() {
+      const themeIcons = document.querySelectorAll('.theme-icon');
+      const isDark = window.themeManager.getCurrentTheme() === 'dark';
+      
+      if (isDark) {
+        themeIcons[0].style.opacity = '0.5';
+        themeIcons[1].style.opacity = '1';
+      } else {
+        themeIcons[0].style.opacity = '1';
+        themeIcons[1].style.opacity = '0.5';
+      }
+    }
+    
+    // Inicializa os ícones quando a página carrega
+    document.addEventListener('DOMContentLoaded', updateThemeIcons);
+    
+    // Atualiza ícones quando o tema muda
+    document.getElementById('theme-switch').addEventListener('change', updateThemeIcons);
+  </script>
 </body>
 </html>
