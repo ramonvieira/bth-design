@@ -1,1 +1,0 @@
-import './totalizer.scss';

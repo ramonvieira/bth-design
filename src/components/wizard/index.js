@@ -1,1 +1,0 @@
-import './wizard.scss';

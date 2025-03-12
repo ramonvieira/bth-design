@@ -1,5 +1,0 @@
-.gitlab-ci.yml
-**/*.log
-/.idea
-/bower_components
-/node_modules
