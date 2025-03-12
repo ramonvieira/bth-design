@@ -218,14 +218,17 @@ function init() {
   }
 
   //lowercase megamenu title
-  var regex = new RegExp(' de | e | do ', 'gi');
-  var content = $('.megamenu-title')
-    .html()
-    .toLowerCase()
-    .replace(regex, function(match) {
-      return ' <span>' + match.trim() + '</span> ';
-    });
-  $('.megamenu-title').html(content);
+  var $megamenuTitle = $('.megamenu-title');
+  if ($megamenuTitle.length && $megamenuTitle.html()) {
+    var regex = new RegExp(' de | e | do ', 'gi');
+    var content = $megamenuTitle
+      .html()
+      .toLowerCase()
+      .replace(regex, function(match) {
+        return ' <span>' + match.trim() + '</span> ';
+      });
+    $megamenuTitle.html(content);
+  }
 
 };
 
