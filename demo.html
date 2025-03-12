@@ -849,7 +849,7 @@
     <div class="custom-scrollbar" style="height: 100px; overflow-y: auto;">
       <p>Conteúdo com scroll personalizado.</p>
       <p>Mais conteúdo para gerar scroll.</p>
-      <p>Aindamais conteúdo para gerar scroll.</p>
+<p>Aindamais conteúdo para gerar scroll.</p>
       <p>Conteúdo adicional para gerar scroll.</p>
       <p>Texto final para demonstração de scroll.</p>
     </div>
@@ -1007,6 +1007,23 @@
 
     // Atualiza ícones quando o tema muda
     document.getElementById('theme-switch').addEventListener('change', updateThemeIcons);
+  </script>
+
+  <!-- jQuery (necessário para componentes Bootstrap e outras funcionalidades) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Exemplo de inicialização para o sidepanel
+    $(document).ready(function() {
+      $('#toggleSidepanel').click(function() {
+        $('#exampleSidepanel').toggleClass('open');
+      });
+
+      $('.sidepanel-close').click(function() {
+        $('#exampleSidepanel').removeClass('open');
+      });
+
+      // Inicializar outros componentes conforme necessário
+    });
   </script>
 </body>
 </html>
