@@ -38,12 +38,12 @@
 		"font-awesome": "^4.7.0"
 	},
 	"scripts": {
-		"build:dev": "NODE_ENV=dev npm run build",
-		"build:prod": "NODE_ENV=production npm run build",
-		"build:test": "NODE_ENV=test npm run build",
+		"build:dev": "cross-env NODE_ENV=dev npm run build",
+		"build:prod": "cross-env NODE_ENV=production npm run build",
+		"build:test": "cross-env NODE_ENV=test npm run build",
 		"build": "rimraf dist && npm run build-global && npm run build-components",
-		"build-global": "webpack --bail --progress",
-		"build-components": "webpack --bail --progress",
+		"build-global": "webpack --config ./config/build-global.js --bail --progress",
+		"build-components": "webpack --config ./config/build-components.js --bail --progress",
 		"lint": "stylelint src/**/*.scss --fix"
 	},
 	"repository": {
